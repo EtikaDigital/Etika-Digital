@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <!-- Background -->
+  <rect width="600" height="600" fill="transparent" />
+  
+  <g transform="translate(0, 0)">
+    <!-- Monogram ED -->
+    <!-- Letter E -->
+    <!-- Outer stadium curve on left, straight flat cuts on right -->
+    <!-- Outer height: 130px, from y=170 to y=300 -->
+    <!-- Middle bar is centered vertically at y=235 -->
+    <path d="
+      M 285 170
+      L 220 170
+      A 65 65 0 0 0 220 300
+      L 285 300
+      L 285 272
+      L 220 272
+      A 37 37 0 0 1 220 198
+      L 285 198
+      Z
+    " fill="#000000" />
+    
+    <!-- E middle bar (rounded left tip, flat right) -->
+    <path d="
+      M 285 221
+      L 225 221
+      A 14 14 0 0 0 225 249
+      L 285 249
+      Z
+    " fill="#000000" />
+
+    <!-- Letter D -->
+    <!-- Straight vertical back on left, semi-oval loop on right -->
+    <path d="
+      M 300 170
+      L 375 170
+      A 65 65 0 0 1 375 300
+      L 300 300
+      Z
+      M 328 198
+      L 370 198
+      A 37 37 0 0 1 370 272
+      L 328 272
+      Z
+    " fill-rule="evenodd" fill="#000000" />
+
+    <!-- Wordmark ETIKADIGITAL -->
+    <g transform="translate(300, 355)" text-anchor="middle" font-family="'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+      <text font-size="34" letter-spacing="4" fill="#000000">
+        <tspan font-weight="700">ETIKA</tspan><tspan font-weight="300">DIGITAL</tspan>
+      </text>
+    </g>
+  </g>
+</svg>

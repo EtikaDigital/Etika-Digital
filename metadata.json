@@ -1,0 +1,6 @@
+{
+  "name": "Etika Digital",
+  "description": "Platform edukasi interaktif etika digital, literasi siber, simulasi dilema moral online, dan panduan netiket modern.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
