@@ -16,8 +16,8 @@ import {
 } from 'lucide-react';
 
 export const HandbookSection: React.FC = () => {
-  // Official Handbook PDF file bundled directly in the app
-  const pdfFileUrl = '/Handbook-Etika-Digital-Berbasis-Pancasila.pdf';
+  // Official Handbook PDF file bundled in ./handbook/handbook-etika-digital.pdf
+  const pdfFileUrl = './handbook/handbook-etika-digital.pdf';
   const [showToast, setShowToast] = useState<boolean>(false);
 
   const handleDownloadHandbookClick = () => {
@@ -62,7 +62,7 @@ export const HandbookSection: React.FC = () => {
             <a
               id="btn-download-handbook"
               href={pdfFileUrl}
-              download="Handbook-Etika-Digital-Berbasis-Pancasila.pdf"
+              download="handbook-etika-digital.pdf"
               target="_blank"
               rel="noopener noreferrer"
               onClick={handleDownloadHandbookClick}
@@ -213,6 +213,7 @@ export const HandbookSection: React.FC = () => {
               <div className="pt-1 flex items-center gap-3">
                 <a
                   href={pdfFileUrl}
+                  download="handbook-etika-digital.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sky-400 font-bold hover:underline inline-flex items-center gap-1"
