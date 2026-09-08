@@ -8,19 +8,18 @@ import { HoaxPhishingDetector } from './components/HoaxPhishingDetector';
 import { NetiquetteGuide } from './components/NetiquetteGuide';
 import { EthicsConsultant } from './components/EthicsConsultant';
 import { EthicsQuiz } from './components/EthicsQuiz';
+import { CyberReportContacts } from './components/CyberReportContacts';
 import { DigitalPledge } from './components/DigitalPledge';
-import { LogoKitModal } from './components/LogoKitModal';
 import { Footer } from './components/Footer';
 
 export default function App() {
-  const [isLogoKitOpen, setIsLogoKitOpen] = useState(false);
   const [isPledgeOpen, setIsPledgeOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
 
   // Track active scroll section for navigation highlighting
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['pilar', 'dilema', 'jejak', 'deteksi', 'netiket', 'konsultan', 'kuis'];
+      const sections = ['pilar', 'dilema', 'jejak', 'deteksi', 'netiket', 'konsultan', 'kuis', 'aduan-siber'];
       const scrollPos = window.scrollY + 200;
 
       for (const section of sections) {
@@ -54,18 +53,17 @@ export default function App() {
     <div className="min-h-screen bg-neutral-50 text-neutral-900 flex flex-col selection:bg-neutral-900 selection:text-white">
       {/* Top Navbar */}
       <Navbar
-        onOpenLogoKit={() => setIsLogoKitOpen(true)}
         onOpenPledge={() => setIsPledgeOpen(true)}
         activeSection={activeSection}
       />
 
       {/* Main Content Sections */}
       <main className="flex-1">
-        {/* Hero with ED Logo Presentation */}
+        {/* Hero Section */}
         <Hero
           onStartDilemma={() => scrollTo('dilema')}
           onStartAudit={() => scrollTo('jejak')}
-          onOpenLogoKit={() => setIsLogoKitOpen(true)}
+          onOpenPledge={() => setIsPledgeOpen(true)}
         />
 
         {/* 4 Pilar Literasi & Etika Digital */}
@@ -88,20 +86,17 @@ export default function App() {
 
         {/* Kuis Uji Kompetensi & Sertifikat Duta Etika */}
         <EthicsQuiz />
+
+        {/* Kontak Aduan Siber Pemerintah RI */}
+        <CyberReportContacts />
       </main>
 
       {/* Footer */}
       <Footer
-        onOpenLogoKit={() => setIsLogoKitOpen(true)}
         onOpenPledge={() => setIsPledgeOpen(true)}
       />
 
-      {/* Interactive Modals */}
-      <LogoKitModal
-        isOpen={isLogoKitOpen}
-        onClose={() => setIsLogoKitOpen(false)}
-      />
-
+      {/* Interactive Pledge & Certificate Modal */}
       <DigitalPledge
         isOpen={isPledgeOpen}
         onClose={() => setIsPledgeOpen(false)}
@@ -109,3 +104,4 @@ export default function App() {
     </div>
   );
 }
+

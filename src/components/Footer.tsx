@@ -5,16 +5,16 @@ import {
   Heart,
   Globe2,
   ExternalLink,
-  Download,
-  FileCheck2
+  PhoneCall,
+  FileCheck2,
+  ShieldAlert
 } from 'lucide-react';
 
 interface FooterProps {
-  onOpenLogoKit: () => void;
   onOpenPledge: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onOpenLogoKit, onOpenPledge }) => {
+export const Footer: React.FC<FooterProps> = ({ onOpenPledge }) => {
   return (
     <footer className="bg-neutral-950 text-white border-t border-neutral-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -42,16 +42,16 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLogoKit, onOpenPledge }) =
             </p>
 
             <div className="flex items-center gap-2 pt-2">
-              <button
-                onClick={onOpenLogoKit}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-neutral-800 hover:bg-neutral-700 text-xs font-semibold text-neutral-200 transition-colors"
+              <a
+                href="#aduan-siber"
+                className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-red-950/80 border border-red-800/80 hover:bg-red-900 text-xs font-bold text-red-200 transition-colors"
               >
-                <Download className="w-3.5 h-3.5 text-neutral-400" />
-                <span>Unduh Logo ED</span>
-              </button>
+                <ShieldAlert className="w-3.5 h-3.5 text-red-400" />
+                <span>Pusat Aduan Siber</span>
+              </a>
               <button
                 onClick={onOpenPledge}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white text-black hover:bg-neutral-200 text-xs font-bold transition-colors"
+                className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-white text-black hover:bg-neutral-200 text-xs font-bold transition-colors"
               >
                 <FileCheck2 className="w-3.5 h-3.5" />
                 <span>Ikrar Digital</span>
@@ -72,6 +72,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLogoKit, onOpenPledge }) =
               <li><a href="#netiket" className="hover:text-white transition-colors">10 Kaidah Netiket</a></li>
               <li><a href="#konsultan" className="hover:text-white transition-colors">Asisten AI Etika</a></li>
               <li><a href="#kuis" className="hover:text-white transition-colors">Kuis & Sertifikasi</a></li>
+              <li><a href="#aduan-siber" className="text-red-400 font-semibold hover:text-red-300 transition-colors">Kontak Aduan Siber 🚨</a></li>
             </ul>
           </div>
 
@@ -89,27 +90,36 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLogoKit, onOpenPledge }) =
             </ul>
           </div>
 
-          {/* Official Verification Resources */}
+          {/* Official Government Complaint Hotlines */}
           <div className="space-y-3">
             <h4 className="text-xs font-bold uppercase tracking-wider text-neutral-300">
-              Portal Cek Fakta
+              Kontak Aduan Siber RI
             </h4>
             <ul className="space-y-2 text-xs text-neutral-400">
-              <li className="flex items-center gap-1.5">
-                <ExternalLink className="w-3 h-3 text-neutral-500" />
-                <span>TurnBackHoax.id</span>
+              <li className="flex items-center justify-between">
+                <span>Polri (Patroli Siber):</span>
+                <span className="font-mono text-white font-bold">110</span>
               </li>
-              <li className="flex items-center gap-1.5">
-                <ExternalLink className="w-3 h-3 text-neutral-500" />
-                <span>CekFakta.com</span>
+              <li className="flex items-center justify-between">
+                <span>Satgas OJK (Pinjol):</span>
+                <span className="font-mono text-white font-bold">157</span>
               </li>
-              <li className="flex items-center gap-1.5">
-                <ExternalLink className="w-3 h-3 text-neutral-500" />
-                <span>AduanKonten.id (Kominfo)</span>
+              <li className="flex items-center justify-between">
+                <span>KemenPPPA (SAPA):</span>
+                <span className="font-mono text-white font-bold">129</span>
               </li>
-              <li className="flex items-center gap-1.5">
-                <ExternalLink className="w-3 h-3 text-neutral-500" />
-                <span>BSSN.go.id (Keamanan Siber)</span>
+              <li className="flex items-center justify-between">
+                <span>Komdigi (Aduan Konten):</span>
+                <span className="font-mono text-white">aduankonten.id</span>
+              </li>
+              <li className="flex items-center justify-between">
+                <span>Cek Rekening Penipu:</span>
+                <span className="font-mono text-white">cekrekening.id</span>
+              </li>
+              <li className="pt-1">
+                <a href="#aduan-siber" className="text-xs text-red-400 hover:text-red-300 font-bold inline-flex items-center gap-1">
+                  <span>Lihat semua hotline & nomor WA →</span>
+                </a>
               </li>
             </ul>
           </div>
@@ -120,7 +130,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLogoKit, onOpenPledge }) =
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-500">
           <p>© {new Date().getFullYear()} ETIKA DIGITAL. Seluruh hak cipta dilindungi.</p>
           <div className="flex items-center gap-1">
-            <span>Dirancang dengan integritas untuk warganet Indonesia yang cerdas & beradab.</span>
+            <span>Dirancang dengan integritas untuk warganet Indonesia yang cerdas, aman, & beradab.</span>
           </div>
         </div>
 
@@ -128,3 +138,4 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLogoKit, onOpenPledge }) =
     </footer>
   );
 };
+

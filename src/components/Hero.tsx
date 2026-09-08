@@ -1,5 +1,4 @@
 import React from 'react';
-import { Logo } from './Logo';
 import {
   Play,
   ShieldCheck,
@@ -7,19 +6,23 @@ import {
   ArrowRight,
   Fingerprint,
   MessageSquareHeart,
-  FileBadge
+  FileBadge,
+  ShieldAlert,
+  PhoneCall,
+  FileCheck2,
+  AlertTriangle
 } from 'lucide-react';
 
 interface HeroProps {
   onStartDilemma: () => void;
   onStartAudit: () => void;
-  onOpenLogoKit: () => void;
+  onOpenPledge: () => void;
 }
 
 export const Hero: React.FC<HeroProps> = ({
   onStartDilemma,
   onStartAudit,
-  onOpenLogoKit,
+  onOpenPledge,
 }) => {
   return (
     <section className="relative overflow-hidden pt-12 pb-16 md:pt-20 md:pb-24 bg-gradient-to-b from-white via-neutral-50/50 to-neutral-100/40 border-b border-neutral-200">
@@ -69,13 +72,13 @@ export const Hero: React.FC<HeroProps> = ({
                 <span>Audit Jejak Digital</span>
               </button>
 
-              <button
-                onClick={onOpenLogoKit}
-                className="inline-flex items-center gap-1.5 px-4 py-3 rounded-xl text-sm font-medium text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100 transition-colors"
+              <a
+                href="#aduan-siber"
+                className="inline-flex items-center gap-1.5 px-4 py-3 rounded-xl text-sm font-bold text-red-600 hover:text-red-700 hover:bg-red-50 border border-red-200 transition-colors shadow-2xs"
               >
-                <span>Lihat Logo & Aset</span>
-                <ArrowRight className="w-4 h-4" />
-              </button>
+                <ShieldAlert className="w-4 h-4 text-red-600" />
+                <span>Kontak Aduan Siber 🚨</span>
+              </a>
             </div>
 
             {/* Key Pillars Highlights */}
@@ -95,38 +98,67 @@ export const Hero: React.FC<HeroProps> = ({
             </div>
           </div>
 
-          {/* Right / Visual Showcase Column */}
+          {/* Right / Interactive Civility Monitor Column */}
           <div className="lg:col-span-5 flex justify-center">
             <div className="relative w-full max-w-md">
               {/* Card Container */}
-              <div className="p-8 rounded-3xl bg-white border border-neutral-200/90 shadow-xl shadow-neutral-200/50 space-y-6 relative overflow-hidden">
+              <div className="p-7 sm:p-8 rounded-3xl bg-white border border-neutral-200/90 shadow-xl shadow-neutral-200/50 space-y-5 relative overflow-hidden">
                 
-                {/* Visual Header with Logo */}
-                <div className="flex flex-col items-center justify-center p-8 rounded-2xl bg-neutral-50 border border-neutral-100">
-                  <Logo variant="stacked" size="lg" symbolColor="#000000" />
-                  <p className="text-[11px] font-medium text-neutral-600 mt-4 tracking-wider uppercase">
-                    Logo Resmi Etika Digital (ED)
-                  </p>
+                {/* Header Badge */}
+                <div className="flex items-center justify-between pb-4 border-b border-neutral-100">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping" />
+                    <span className="text-xs font-bold uppercase tracking-wider text-neutral-900">
+                      Radar Keadaban Siber RI
+                    </span>
+                  </div>
+                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-neutral-100 text-neutral-600 font-semibold">
+                    Siaga 24/7
+                  </span>
                 </div>
 
-                {/* Quick Interactive Snippet */}
-                <div className="space-y-3">
+                {/* Civility Score Meter */}
+                <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-100 space-y-2.5">
                   <div className="flex items-center justify-between text-xs">
-                    <span className="font-semibold text-neutral-800">Indeks Keadaban Siber</span>
-                    <span className="font-mono font-bold text-neutral-900">Skor 68 / 100</span>
+                    <span className="font-bold text-neutral-800">Indeks Keadaban Digital (DCI)</span>
+                    <span className="font-mono font-black text-neutral-950 text-sm">68 / 100</span>
                   </div>
-                  <div className="w-full h-2.5 rounded-full bg-neutral-100 overflow-hidden">
+                  <div className="w-full h-3 rounded-full bg-neutral-200/80 overflow-hidden p-0.5">
                     <div className="h-full bg-neutral-900 rounded-full w-[68%]" />
                   </div>
-                  <p className="text-xs text-neutral-600 leading-normal">
-                    Tantangan utama di Indonesia: Hoaks (47%), Ujaran Kebencian (39%), dan Penipuan Phishing (32%). Bersama kita tingkatkan!
+                  <p className="text-[11px] text-neutral-500 leading-relaxed">
+                    Tantangan utama warganet: <strong className="text-neutral-700">Hoaks (47%)</strong>, <strong className="text-neutral-700">Ujaran Kebencian (39%)</strong>, & <strong className="text-neutral-700">Penipuan Online (32%)</strong>.
                   </p>
                 </div>
 
-                {/* Mini Action Tag */}
+                {/* Emergency Contact Quick Access */}
+                <div className="p-4 rounded-2xl bg-red-50/70 border border-red-100 space-y-2">
+                  <div className="flex items-center gap-2 text-red-700 font-bold text-xs">
+                    <ShieldAlert className="w-4 h-4 text-red-600" />
+                    <span>Layanan Pengaduan Siber Pemerintah</span>
+                  </div>
+                  <p className="text-[11px] text-red-900/80 leading-relaxed">
+                    Menghadapi penipuan daring, doxing, atau pemerasan? Laporkan langsung ke Bareskrim Polri atau Komdigi.
+                  </p>
+                  <a
+                    href="#aduan-siber"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-red-700 hover:text-red-800 hover:underline pt-1"
+                  >
+                    <span>Buka Daftar Kontak Resmi (7 Lembaga)</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </a>
+                </div>
+
+                {/* Action Tag: Ikrar Digital */}
                 <div className="pt-2 flex items-center justify-between border-t border-neutral-100 text-xs">
-                  <span className="text-neutral-600 font-medium">Format Logo:</span>
-                  <span className="font-mono text-neutral-700 bg-neutral-100 px-2 py-0.5 rounded">SVG • PNG • Vector</span>
+                  <span className="text-neutral-600 font-medium">Aksi Bersama:</span>
+                  <button
+                    onClick={onOpenPledge}
+                    className="inline-flex items-center gap-1.5 font-bold text-neutral-900 hover:text-amber-700 transition-colors"
+                  >
+                    <FileCheck2 className="w-3.5 h-3.5 text-amber-600" />
+                    <span>Tanda Tangan Ikrar Digital →</span>
+                  </button>
                 </div>
               </div>
 
@@ -134,8 +166,8 @@ export const Hero: React.FC<HeroProps> = ({
               <div className="absolute -bottom-4 -left-4 p-3.5 bg-neutral-900 text-white rounded-2xl shadow-xl flex items-center gap-3 text-xs hidden sm:flex">
                 <Sparkles className="w-4 h-4 text-amber-400 shrink-0" />
                 <div>
-                  <div className="font-semibold">100% Interaktif</div>
-                  <div className="text-[11px] text-neutral-400">Simulasi, Audit, & Kuis Berhadiah Sertifikat</div>
+                  <div className="font-semibold">100% Edukatif & Interaktif</div>
+                  <div className="text-[11px] text-neutral-400">Simulasi Kasus, Audit Jejak, & Piagam Ikrar</div>
                 </div>
               </div>
 
@@ -147,3 +179,4 @@ export const Hero: React.FC<HeroProps> = ({
     </section>
   );
 };
+

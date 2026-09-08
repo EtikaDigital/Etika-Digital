@@ -8,7 +8,7 @@ import {
   ShieldAlert,
   BookOpen,
   Award,
-  Download,
+  PhoneCall,
   Menu,
   X,
   FileCheck2,
@@ -16,13 +16,11 @@ import {
 } from 'lucide-react';
 
 interface NavbarProps {
-  onOpenLogoKit: () => void;
   onOpenPledge: () => void;
   activeSection: string;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
-  onOpenLogoKit,
   onOpenPledge,
   activeSection,
 }) => {
@@ -36,6 +34,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     { href: '#netiket', label: 'Kaidah Netiket', icon: BookOpen },
     { href: '#konsultan', label: 'Konsultan AI', icon: Bot },
     { href: '#kuis', label: 'Kuis & Sertifikat', icon: Award },
+    { href: '#aduan-siber', label: 'Aduan Siber', icon: PhoneCall },
   ];
 
   return (
@@ -65,6 +64,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           {navLinks.map((link) => {
             const Icon = link.icon;
             const isActive = activeSection === link.href.replace('#', '');
+            const isAlert = link.href === '#aduan-siber';
             return (
               <a
                 key={link.href}
@@ -72,26 +72,28 @@ export const Navbar: React.FC<NavbarProps> = ({
                 className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg transition-colors ${
                   isActive
                     ? 'bg-neutral-900 text-white'
+                    : isAlert
+                    ? 'text-red-600 hover:bg-red-50 hover:text-red-700'
                     : 'text-neutral-600 hover:text-neutral-950 hover:bg-neutral-100'
                 }`}
               >
-                <Icon className="w-3.5 h-3.5" />
+                <Icon className={`w-3.5 h-3.5 ${isAlert && !isActive ? 'text-red-600' : ''}`} />
                 <span>{link.label}</span>
               </a>
             );
           })}
         </nav>
 
-        {/* Actions (Brand Logo Kit & Pledge) */}
+        {/* Actions (Aduan Siber Quick Link & Pledge) */}
         <div className="hidden sm:flex items-center gap-2.5">
-          <button
-            onClick={onOpenLogoKit}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-neutral-300 bg-white text-xs font-semibold text-neutral-700 hover:bg-neutral-50 hover:text-neutral-950 hover:border-neutral-400 transition-all shadow-xs"
-            title="Lihat & Unduh Logo Resmi Etika Digital"
+          <a
+            href="#aduan-siber"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-red-200 bg-red-50 text-xs font-bold text-red-700 hover:bg-red-100 transition-all shadow-xs"
+            title="Layanan Aduan Kejahatan Siber Pemerintah"
           >
-            <Download className="w-3.5 h-3.5 text-neutral-500" />
-            <span>Unduh Logo</span>
-          </button>
+            <ShieldAlert className="w-3.5 h-3.5 text-red-600" />
+            <span>Aduan Siber 🚨</span>
+          </a>
 
           <button
             onClick={onOpenPledge}
@@ -104,13 +106,14 @@ export const Navbar: React.FC<NavbarProps> = ({
 
         {/* Mobile Hamburger Button */}
         <div className="flex items-center gap-2 xl:hidden">
-          <button
-            onClick={onOpenLogoKit}
-            className="p-2 rounded-lg text-neutral-600 hover:bg-neutral-100 text-xs font-medium inline-flex items-center gap-1 border border-neutral-200"
-            aria-label="Unduh Logo"
+          <a
+            href="#aduan-siber"
+            className="p-2 rounded-lg text-red-600 hover:bg-red-50 text-xs font-bold inline-flex items-center gap-1 border border-red-200"
+            aria-label="Aduan Siber"
           >
-            <Download className="w-4 h-4" />
-          </button>
+            <ShieldAlert className="w-4 h-4 text-red-600" />
+            <span className="text-[11px]">Aduan</span>
+          </a>
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="p-2 rounded-lg text-neutral-700 hover:bg-neutral-100 focus:outline-none"
@@ -127,14 +130,19 @@ export const Navbar: React.FC<NavbarProps> = ({
           <div className="grid grid-cols-2 gap-2 pt-2">
             {navLinks.map((link) => {
               const Icon = link.icon;
+              const isAlert = link.href === '#aduan-siber';
               return (
                 <a
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="flex items-center gap-2 p-2.5 rounded-lg bg-neutral-50 hover:bg-neutral-100 text-xs font-medium text-neutral-700"
+                  className={`flex items-center gap-2 p-2.5 rounded-lg text-xs font-medium ${
+                    isAlert
+                      ? 'bg-red-50 text-red-700 font-bold border border-red-200'
+                      : 'bg-neutral-50 hover:bg-neutral-100 text-neutral-700'
+                  }`}
                 >
-                  <Icon className="w-4 h-4 text-neutral-500" />
+                  <Icon className={`w-4 h-4 ${isAlert ? 'text-red-600' : 'text-neutral-500'}`} />
                   <span>{link.label}</span>
                 </a>
               );
@@ -158,3 +166,4 @@ export const Navbar: React.FC<NavbarProps> = ({
     </header>
   );
 };
+
