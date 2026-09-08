@@ -10,7 +10,9 @@ import {
   Sparkles,
   HelpCircle,
   Trophy,
-  UserCheck
+  UserCheck,
+  Download,
+  ArrowLeft
 } from 'lucide-react';
 
 export const EthicsQuiz: React.FC = () => {
@@ -259,10 +261,28 @@ export const EthicsQuiz: React.FC = () => {
                   <button
                     onClick={() => setIsCertificateOpen(true)}
                     disabled={!userName.trim()}
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-amber-400 text-neutral-950 font-bold text-sm hover:bg-amber-300 disabled:opacity-40 disabled:cursor-not-allowed transition-all"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-amber-400 text-neutral-950 font-bold text-sm hover:bg-amber-300 disabled:opacity-40 disabled:cursor-not-allowed transition-all shadow-md"
                   >
-                    <Trophy className="w-4 h-4" />
-                    <span>Terbitkan Sertifikat Saya</span>
+                    <Download className="w-4 h-4" />
+                    <span>Buka & Unduh Sertifikat</span>
+                  </button>
+                </div>
+
+                <div className="flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-neutral-800">
+                  <button
+                    onClick={() => setCurrentIdx(0)}
+                    className="inline-flex items-center gap-1.5 text-xs text-neutral-400 hover:text-white transition-colors"
+                  >
+                    <ArrowLeft className="w-3.5 h-3.5" />
+                    <span>Kembali ke Soal Pertama (Review Jawaban)</span>
+                  </button>
+
+                  <button
+                    onClick={handleRestart}
+                    className="inline-flex items-center gap-1.5 text-xs text-neutral-400 hover:text-amber-400 transition-colors"
+                  >
+                    <RotateCcw className="w-3.5 h-3.5" />
+                    <span>Ulangi Kuis Dari Awal</span>
                   </button>
                 </div>
               </div>
@@ -271,12 +291,20 @@ export const EthicsQuiz: React.FC = () => {
                 <p className="text-xs text-neutral-300">
                   Jangan berkecil hati! Pelajari kembali materi 10 Kaidah Netiket dan 4 Pilar Literasi, lalu coba lagi untuk meraih sertifikat.
                 </p>
-                <button
-                  onClick={handleRestart}
-                  className="px-5 py-2.5 rounded-xl bg-white text-neutral-900 text-xs font-bold hover:bg-neutral-100"
-                >
-                  Ulangi Kuis Sekarang
-                </button>
+                <div className="flex items-center gap-3">
+                  <button
+                    onClick={() => setCurrentIdx(0)}
+                    className="px-4 py-2.5 rounded-xl bg-neutral-800 text-neutral-300 text-xs font-semibold hover:bg-neutral-700"
+                  >
+                    ← Kembali Review Soal
+                  </button>
+                  <button
+                    onClick={handleRestart}
+                    className="px-5 py-2.5 rounded-xl bg-white text-neutral-900 text-xs font-bold hover:bg-neutral-100"
+                  >
+                    Ulangi Kuis Sekarang
+                  </button>
+                </div>
               </div>
             )}
           </div>
