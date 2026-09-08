@@ -150,7 +150,7 @@ export const Hero: React.FC<HeroProps> = ({
                     href="#aduan-siber"
                     className="inline-flex items-center gap-1.5 text-xs font-bold text-red-700 hover:text-red-800 hover:underline pt-1"
                   >
-                    <span>Buka Daftar Kontak Resmi (7 Lembaga)</span>
+                    <span>Buka Daftar Kontak Resmi (6 Lembaga)</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </a>
                 </div>
