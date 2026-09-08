@@ -16,15 +16,13 @@ import {
 } from 'lucide-react';
 
 export const HandbookSection: React.FC = () => {
-  // Google Drive configuration for Handbook Etika Digital
-  const [driveUrl] = useState<string>(() => {
-    return localStorage.getItem('handbook_drive_url') || 'https://drive.google.com/drive/search?q=Handbook%20Etika%20Digital';
-  });
-  const [showDriveToast, setShowDriveToast] = useState<boolean>(false);
+  // Official Handbook PDF file bundled directly in the app
+  const pdfFileUrl = '/Handbook-Etika-Digital-Berbasis-Pancasila.pdf';
+  const [showToast, setShowToast] = useState<boolean>(false);
 
   const handleDownloadHandbookClick = () => {
-    setShowDriveToast(true);
-    setTimeout(() => setShowDriveToast(false), 5000);
+    setShowToast(true);
+    setTimeout(() => setShowToast(false), 5000);
   };
 
   return (
@@ -59,20 +57,20 @@ export const HandbookSection: React.FC = () => {
             </p>
           </div>
 
-          {/* Primary Action Button (Download Handbook directing to Google Drive) */}
+          {/* Primary Action Button (Download Handbook PDF directly) */}
           <div className="flex items-center gap-3 shrink-0">
             <a
               id="btn-download-handbook"
-              href={driveUrl}
+              href={pdfFileUrl}
+              download="Handbook-Etika-Digital-Berbasis-Pancasila.pdf"
               target="_blank"
               rel="noopener noreferrer"
               onClick={handleDownloadHandbookClick}
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white text-xs sm:text-sm font-black transition-all shadow-lg shadow-sky-500/25 cursor-pointer active:scale-98 group"
-              title="Download Handbook (Buka Berkas/Folder di Google Drive)"
+              title="Download Handbook PDF Resmi (20 Halaman)"
             >
               <Download className="w-4 h-4" />
-              <span>Download Handbook (Google Drive)</span>
-              <ExternalLink className="w-3.5 h-3.5 opacity-80 group-hover:opacity-100 transition-opacity" />
+              <span>Download Handbook</span>
             </a>
           </div>
         </div>
@@ -203,29 +201,29 @@ export const HandbookSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Drive Download Toast Notification */}
-        {showDriveToast && (
-          <div className="fixed bottom-6 right-6 z-50 bg-neutral-900/95 backdrop-blur-md border border-sky-400/50 rounded-2xl p-4 shadow-2xl flex items-start gap-3 max-w-sm">
+        {/* PDF Download Toast Notification */}
+        {showToast && (
+          <div className="fixed bottom-6 right-6 z-50 bg-neutral-900/95 backdrop-blur-md border border-sky-400/50 rounded-2xl p-4 shadow-2xl flex items-start gap-3 max-w-sm animate-in fade-in slide-in-from-bottom-5">
             <Cloud className="w-5 h-5 text-sky-400 shrink-0 mt-0.5 animate-pulse" />
-            <div className="space-y-1 text-xs">
-              <p className="font-bold text-white">Mengarahkan ke Google Drive</p>
+            <div className="space-y-1.5 text-xs">
+              <p className="font-bold text-white">Mengunduh Handbook Resmi</p>
               <p className="text-neutral-300">
-                Membuka tautan pengunduhan berkas <strong>"Handbook Etika Digital"</strong>.
+                Berkas <strong>"Handbook Etika Digital Berbasis Nilai Pancasila"</strong> sedang diunduh.
               </p>
-              <div className="pt-1 flex items-center gap-2">
+              <div className="pt-1 flex items-center gap-3">
                 <a
-                  href={driveUrl}
+                  href={pdfFileUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sky-400 font-bold hover:underline inline-flex items-center gap-1"
                 >
-                  <span>Buka Ulang</span>
+                  <span>Buka PDF di Tab Baru</span>
                   <ExternalLink className="w-3 h-3" />
                 </a>
               </div>
             </div>
             <button
-              onClick={() => setShowDriveToast(false)}
+              onClick={() => setShowToast(false)}
               className="p-1 text-neutral-400 hover:text-white transition-colors cursor-pointer"
               aria-label="Tutup Notifikasi"
             >

@@ -73,7 +73,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPledge }) => {
               <li><a href="#netiket" className="hover:text-white transition-colors">10 Kaidah Netiket</a></li>
               <li><a href="#konsultan" className="hover:text-white transition-colors">Asisten AI Etika</a></li>
               <li><a href="#kuis" className="hover:text-white transition-colors">Kuis & Sertifikasi</a></li>
-              <li><a href="#aduan-siber" className="text-red-400 font-semibold hover:text-red-300 transition-colors">Kontak Aduan Siber 🚨</a></li>
+              <li><a href="#aduan-siber" className="text-red-400 font-semibold hover:text-red-300 transition-colors">Kontak Aduan Siber</a></li>
             </ul>
           </div>
 

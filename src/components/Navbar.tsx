@@ -59,7 +59,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden xl:flex items-center gap-0.5 2xl:gap-1 shrink-0 flex-nowrap">
+        <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1 2xl:gap-1.5 shrink-0 flex-nowrap">
           {navLinks.map((link) => {
             const Icon = link.icon;
             const isActive = activeSection === link.href.replace('#', '');
@@ -67,7 +67,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               <a
                 key={link.href}
                 href={link.href}
-                className={`whitespace-nowrap shrink-0 inline-flex items-center gap-1.5 px-2 2xl:px-3 py-1.5 text-xs font-semibold rounded-lg transition-colors ${
+                className={`whitespace-nowrap shrink-0 inline-flex items-center gap-1.5 px-2 xl:px-2.5 2xl:px-3 py-1.5 text-xs font-semibold rounded-lg transition-colors ${
                   isActive
                     ? 'bg-neutral-900 text-white'
                     : 'text-neutral-600 hover:text-neutral-950 hover:bg-neutral-100'
@@ -84,7 +84,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         <div className="hidden sm:flex items-center gap-2 shrink-0">
           <a
             href="#aduan-siber"
-            className="whitespace-nowrap shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-red-200 bg-red-50 text-xs font-bold text-red-700 hover:bg-red-100 transition-all shadow-xs"
+            className="whitespace-nowrap shrink-0 inline-flex items-center gap-1.5 px-2.5 xl:px-3 py-1.5 rounded-lg border border-red-200 bg-red-50 text-xs font-bold text-red-700 hover:bg-red-100 transition-all shadow-xs"
             title="Layanan Aduan Kejahatan Siber Pemerintah"
           >
             <ShieldAlert className="w-3.5 h-3.5 text-red-600 shrink-0" />
@@ -93,7 +93,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           <button
             onClick={onOpenPledge}
-            className="whitespace-nowrap shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 2xl:px-3.5 rounded-lg bg-neutral-900 text-xs font-semibold text-white hover:bg-neutral-800 transition-all shadow-xs"
+            className="whitespace-nowrap shrink-0 inline-flex items-center gap-1.5 px-2.5 xl:px-3 2xl:px-3.5 rounded-lg bg-neutral-900 text-xs font-semibold text-white hover:bg-neutral-800 transition-all shadow-xs"
           >
             <FileCheck2 className="w-3.5 h-3.5 text-amber-400 shrink-0" />
             <span className="whitespace-nowrap">Ikrar Digital</span>
@@ -101,7 +101,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         </div>
 
         {/* Mobile Hamburger Button */}
-        <div className="flex items-center gap-2 xl:hidden">
+        <div className="flex items-center gap-2 lg:hidden">
           <a
             href="#aduan-siber"
             className="p-2 rounded-lg text-red-600 hover:bg-red-50 text-xs font-bold inline-flex items-center gap-1 border border-red-200"
