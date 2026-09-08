@@ -2,15 +2,12 @@ import React from 'react';
 import {
   Play,
   ShieldCheck,
-  Sparkles,
   ArrowRight,
   Fingerprint,
   MessageSquareHeart,
   FileBadge,
   ShieldAlert,
-  PhoneCall,
-  FileCheck2,
-  AlertTriangle
+  FileCheck2
 } from 'lucide-react';
 
 interface HeroProps {
@@ -159,15 +156,6 @@ export const Hero: React.FC<HeroProps> = ({
                     <FileCheck2 className="w-3.5 h-3.5 text-amber-600" />
                     <span>Tanda Tangan Ikrar Digital →</span>
                   </button>
-                </div>
-              </div>
-
-              {/* Decorative Floating Card */}
-              <div className="absolute -bottom-4 -left-4 p-3.5 bg-neutral-900 text-white rounded-2xl shadow-xl flex items-center gap-3 text-xs hidden sm:flex">
-                <Sparkles className="w-4 h-4 text-amber-400 shrink-0" />
-                <div>
-                  <div className="font-semibold">100% Edukatif & Interaktif</div>
-                  <div className="text-[11px] text-neutral-400">Simulasi Kasus, Audit Jejak, & Piagam Ikrar</div>
                 </div>
               </div>
 
