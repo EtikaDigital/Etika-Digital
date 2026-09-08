@@ -150,24 +150,6 @@ const AGENCIES: GovernmentAgency[] = [
     email: 'incident@bssn.go.id',
     hours: '24 Jam / 7 Hari (Monitoring Nasional)',
     isUrgent: false
-  },
-  {
-    id: 'lpsk',
-    name: 'Lembaga Perlindungan Saksi dan Korban',
-    shortName: 'LPSK RI',
-    agency: 'Lembaga Negara Independen RI',
-    category: 'keamanan',
-    description: 'Lembaga yang memberikan perlindungan fisik, hukum, pemenuhan hak prosedural, dan bantuan psikologis bagi saksi dan korban tindak pidana berisiko tinggi.',
-    handledCases: [
-      'Korban kejahatan siber yang diintimidasi secara fisik',
-      'Ancaman keselamatan jiwa setelah melaporkan kejahatan siber',
-      'Saksi kunci kasus kejahatan terorganisir di dunia digital'
-    ],
-    website: 'https://lpsk.go.id',
-    hotline: '148',
-    whatsapp: '0857-7001-0048',
-    hours: '24 Jam Layanan Darurat',
-    isUrgent: false
   }
 ];
 
@@ -268,7 +250,7 @@ export const CyberReportContacts: React.FC = () => {
               { id: 'komdigi', label: 'Konten & Rekening' },
               { id: 'keuangan', label: 'OJK / Pinjol (157)' },
               { id: 'anak', label: 'Perempuan & Anak (129)' },
-              { id: 'keamanan', label: 'BSSN & LPSK' },
+              { id: 'keamanan', label: 'BSSN (Insiden Siber)' },
             ].map((tab) => (
               <button
                 key={tab.id}
