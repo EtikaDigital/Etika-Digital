@@ -7,6 +7,7 @@ import {
   Footprints,
   ShieldAlert,
   BookOpen,
+  Users,
   Award,
   PhoneCall,
   Menu,
@@ -27,11 +28,12 @@ export const Navbar: React.FC<NavbarProps> = ({
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navLinks = [
+    { href: '#handbook', label: 'About Us', icon: Users },
     { href: '#pilar', label: '4 Pilar', icon: Compass },
     { href: '#dilema', label: 'Uji Dilema', icon: Scale },
     { href: '#jejak', label: 'Audit Jejak', icon: Footprints },
     { href: '#deteksi', label: 'Spot Red Flags', icon: ShieldAlert },
-    { href: '#netiket', label: 'Kaidah Netiket', icon: BookOpen },
+    { href: '#netiket', label: 'Kaidah Netiket', icon: Sparkles },
     { href: '#konsultan', label: 'Konsultan AI', icon: Bot },
     { href: '#kuis', label: 'Kuis & Sertifikat', icon: Award },
     { href: '#aduan-siber', label: 'Aduan Siber', icon: PhoneCall },

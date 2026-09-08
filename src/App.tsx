@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
+import { HandbookSection } from './components/HandbookSection';
 import { FourPillars } from './components/FourPillars';
 import { DilemmaSimulator } from './components/DilemmaSimulator';
 import { FootprintAudit } from './components/FootprintAudit';
@@ -19,7 +20,7 @@ export default function App() {
   // Track active scroll section for navigation highlighting
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['pilar', 'dilema', 'jejak', 'deteksi', 'netiket', 'konsultan', 'kuis', 'aduan-siber'];
+      const sections = ['handbook', 'pilar', 'dilema', 'jejak', 'deteksi', 'netiket', 'konsultan', 'kuis', 'aduan-siber'];
       const scrollPos = window.scrollY + 200;
 
       for (const section of sections) {
@@ -65,6 +66,9 @@ export default function App() {
           onStartAudit={() => scrollTo('jejak')}
           onOpenPledge={() => setIsPledgeOpen(true)}
         />
+
+        {/* Handbook Etika Digital Berbasis Pancasila */}
+        <HandbookSection />
 
         {/* 4 Pilar Literasi & Etika Digital */}
         <FourPillars />

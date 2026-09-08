@@ -7,7 +7,8 @@ import {
   MessageSquareHeart,
   FileBadge,
   ShieldAlert,
-  FileCheck2
+  FileCheck2,
+  BookOpen
 } from 'lucide-react';
 
 interface HeroProps {
@@ -53,28 +54,36 @@ export const Hero: React.FC<HeroProps> = ({
 
             {/* CTAs */}
             <div className="flex flex-wrap items-center gap-3 pt-2">
+              <a
+                href="#handbook"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-amber-400 text-sm font-extrabold text-neutral-950 hover:bg-amber-300 transition-all shadow-md active:scale-[0.98]"
+              >
+                <BookOpen className="w-4 h-4 text-neutral-950" />
+                <span>Handbook &amp; About Us</span>
+              </a>
+
               <button
                 onClick={onStartDilemma}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-neutral-900 text-sm font-semibold text-white hover:bg-neutral-800 transition-all shadow-md hover:shadow-lg active:scale-[0.98]"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-neutral-900 text-sm font-semibold text-white hover:bg-neutral-800 transition-all shadow-md hover:shadow-lg active:scale-[0.98]"
               >
                 <Play className="w-4 h-4 fill-white" />
-                <span>Mulai Simulasi Dilema</span>
+                <span>Simulasi Dilema</span>
               </button>
 
               <button
                 onClick={onStartAudit}
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-neutral-300 bg-white text-sm font-semibold text-neutral-800 hover:bg-neutral-50 hover:border-neutral-400 transition-all shadow-xs"
+                className="inline-flex items-center gap-2 px-4 py-3 rounded-xl border border-neutral-300 bg-white text-sm font-semibold text-neutral-800 hover:bg-neutral-50 hover:border-neutral-400 transition-all shadow-xs"
               >
                 <Fingerprint className="w-4 h-4 text-neutral-600" />
-                <span>Audit Jejak Digital</span>
+                <span>Audit Jejak</span>
               </button>
 
               <a
                 href="#aduan-siber"
-                className="inline-flex items-center gap-1.5 px-4 py-3 rounded-xl text-sm font-bold text-red-600 hover:text-red-700 hover:bg-red-50 border border-red-200 transition-colors shadow-2xs"
+                className="inline-flex items-center gap-1.5 px-3.5 py-3 rounded-xl text-sm font-bold text-red-600 hover:text-red-700 hover:bg-red-50 border border-red-200 transition-colors shadow-2xs"
               >
                 <ShieldAlert className="w-4 h-4 text-red-600" />
-                <span>Kontak Aduan Siber 🚨</span>
+                <span>Aduan Siber 🚨</span>
               </a>
             </div>
 

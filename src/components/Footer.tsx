@@ -65,6 +65,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPledge }) => {
               Fitur Interaktif
             </h4>
             <ul className="space-y-2 text-xs text-neutral-400">
+              <li><a href="#handbook" className="text-amber-400 font-semibold hover:text-amber-300 transition-colors">Handbook Pancasila (E-Book)</a></li>
               <li><a href="#pilar" className="hover:text-white transition-colors">4 Pilar Literasi</a></li>
               <li><a href="#dilema" className="hover:text-white transition-colors">Simulasi Uji Dilema</a></li>
               <li><a href="#jejak" className="hover:text-white transition-colors">Audit Jejak Digital</a></li>
