@@ -86,18 +86,18 @@ export const FourPillars: React.FC = () => {
   const CurrentIcon = current.icon;
 
   return (
-    <section id="pilar" className="py-20 bg-white border-b border-neutral-200">
+    <section id="pilar" className="py-20 bg-gradient-to-b from-white via-sky-50/50 to-[#eaf4fd] border-b border-sky-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3 mb-14">
-          <span className="text-xs font-bold uppercase tracking-widest text-neutral-600 bg-neutral-100 px-3 py-1 rounded-full">
+          <span className="text-xs font-bold uppercase tracking-widest text-sky-800 bg-sky-100/90 border border-sky-200 px-3 py-1 rounded-full">
             Kerangka Kerja Nasional
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-neutral-950 tracking-tight">
-            4 Pilar Literasi & Keadaban Digital
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-blue-950 tracking-tight">
+            4 Pilar Literasi &amp; Keadaban Digital
           </h2>
-          <p className="text-neutral-600 text-sm sm:text-base">
+          <p className="text-slate-600 text-sm sm:text-base">
             Fondasi komprehensif yang dirancang untuk mewujudkan ekosistem digital Indonesia yang tangguh, etis, dan produktif.
           </p>
         </div>
@@ -113,22 +113,22 @@ export const FourPillars: React.FC = () => {
                 onClick={() => setSelectedPillar(idx)}
                 className={`text-left p-5 rounded-2xl border transition-all duration-200 relative overflow-hidden group ${
                   isSelected
-                    ? 'border-neutral-900 bg-neutral-950 text-white shadow-lg -translate-y-1'
-                    : 'border-neutral-200 bg-neutral-50 hover:bg-white hover:border-neutral-300 text-neutral-800'
+                    ? 'border-sky-400 bg-gradient-to-br from-blue-950 via-blue-900 to-indigo-950 text-white shadow-lg shadow-blue-950/20 -translate-y-1'
+                    : 'border-sky-200/80 bg-white/95 hover:bg-sky-50/70 hover:border-sky-300 text-slate-800 shadow-xs'
                 }`}
               >
                 <div className="flex items-center justify-between mb-4">
-                  <div className={`p-2.5 rounded-xl ${isSelected ? 'bg-neutral-800 text-white' : 'bg-white border border-neutral-200 text-neutral-900 group-hover:bg-neutral-100'}`}>
+                  <div className={`p-2.5 rounded-xl ${isSelected ? 'bg-sky-500/20 border border-sky-400/40 text-sky-300' : 'bg-sky-50 border border-sky-200 text-sky-700 group-hover:bg-sky-100/70'}`}>
                     <Icon className="w-5 h-5" />
                   </div>
                   <span className={`text-[11px] font-semibold px-2 py-0.5 rounded-md ${
-                    isSelected ? 'bg-neutral-800 text-neutral-200' : 'bg-neutral-200/70 text-neutral-600'
+                    isSelected ? 'bg-sky-900/60 text-sky-200 border border-sky-700/50' : 'bg-sky-100 text-sky-800'
                   }`}>
                     {pillar.badge}
                   </span>
                 </div>
                 <h3 className="font-bold text-base leading-tight">{pillar.title}</h3>
-                <p className={`text-xs mt-1 ${isSelected ? 'text-neutral-400' : 'text-neutral-600'}`}>
+                <p className={`text-xs mt-1 ${isSelected ? 'text-sky-200/80' : 'text-slate-600'}`}>
                   {pillar.subtitle}
                 </p>
               </button>
@@ -137,35 +137,35 @@ export const FourPillars: React.FC = () => {
         </div>
 
         {/* Detailed Interactive Viewer */}
-        <div className="rounded-3xl border border-neutral-200 bg-neutral-50 p-6 sm:p-10 shadow-sm transition-all">
+        <div className="rounded-3xl border border-sky-200 bg-white/95 p-6 sm:p-10 shadow-sm shadow-sky-900/5 transition-all">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             
             <div className="lg:col-span-7 space-y-4">
               <div className="flex items-center gap-3">
-                <div className="p-3 rounded-2xl bg-neutral-900 text-white">
+                <div className="p-3 rounded-2xl bg-gradient-to-tr from-sky-500 to-blue-700 text-white shadow-md shadow-sky-500/20">
                   <CurrentIcon className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-extrabold text-neutral-950">
-                    {current.title} — <span className="font-medium text-neutral-700">{current.subtitle}</span>
+                  <h3 className="text-2xl font-extrabold text-blue-950">
+                    {current.title} — <span className="font-medium text-slate-700">{current.subtitle}</span>
                   </h3>
-                  <p className="text-xs font-semibold text-neutral-600 uppercase tracking-wider">
+                  <p className="text-xs font-semibold text-sky-800 uppercase tracking-wider">
                     {current.tagline}
                   </p>
                 </div>
               </div>
 
-              <p className="text-sm text-neutral-700 leading-relaxed pt-2">
+              <p className="text-sm text-slate-700 leading-relaxed pt-2">
                 {current.description}
               </p>
 
               <div className="pt-2">
-                <h4 className="text-xs font-bold uppercase tracking-wider text-neutral-600 mb-3">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-slate-600 mb-3">
                   Kompetensi Utama yang Wajib Dikuasai:
                 </h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                   {current.competencies.map((comp, i) => (
-                    <div key={i} className="flex items-start gap-2.5 p-3 rounded-xl bg-white border border-neutral-200/80 text-xs text-neutral-800 font-medium shadow-2xs">
+                    <div key={i} className="flex items-start gap-2.5 p-3 rounded-xl bg-sky-50/50 border border-sky-200/80 text-xs text-slate-800 font-medium shadow-2xs">
                       <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                       <span>{comp}</span>
                     </div>
@@ -175,16 +175,16 @@ export const FourPillars: React.FC = () => {
             </div>
 
             <div className="lg:col-span-5 space-y-4">
-              <div className="p-6 rounded-2xl bg-neutral-900 text-white space-y-4 shadow-md">
-                <div className="flex items-center justify-between text-xs text-neutral-400 border-b border-neutral-800 pb-3">
-                  <span>Landasan Hukum & Norma</span>
-                  <ArrowUpRight className="w-4 h-4 text-neutral-400" />
+              <div className="p-6 rounded-2xl bg-gradient-to-br from-blue-950 via-[#0b2447] to-[#06162d] text-white space-y-4 border border-sky-800/60 shadow-lg">
+                <div className="flex items-center justify-between text-xs text-sky-300 border-b border-sky-800/60 pb-3">
+                  <span>Landasan Hukum &amp; Norma</span>
+                  <ArrowUpRight className="w-4 h-4 text-sky-400" />
                 </div>
                 <div className="space-y-1.5">
-                  <span className="text-[11px] font-mono text-neutral-400 uppercase">Regulasi Relevan:</span>
-                  <p className="text-sm font-semibold text-neutral-100">{current.legalBasis}</p>
+                  <span className="text-[11px] font-mono text-sky-300 uppercase">Regulasi Relevan:</span>
+                  <p className="text-sm font-semibold text-white">{current.legalBasis}</p>
                 </div>
-                <div className="p-3 rounded-xl bg-neutral-800/80 text-xs text-neutral-300 leading-relaxed border border-neutral-700/50">
+                <div className="p-3 rounded-xl bg-sky-950/70 text-xs text-sky-100/90 leading-relaxed border border-sky-700/50">
                   💡 <strong>Refleksi Etis:</strong> Setiap aksi di dunia digital meninggalkan jejak (footprint). Integritas kita diuji saat tidak ada orang yang melihat langsung apa yang kita ketik di balik layar.
                 </div>
               </div>

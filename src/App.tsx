@@ -51,7 +51,10 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-neutral-50 text-neutral-900 flex flex-col selection:bg-neutral-900 selection:text-white">
+    <div className="min-h-screen bg-gradient-to-b from-[#ddecfa] via-[#f0f7fe] to-[#e1effc] text-slate-900 flex flex-col selection:bg-blue-600 selection:text-white relative">
+      {/* Ambient background blur circles resembling handbook sky-blue tones */}
+      <div className="fixed top-0 left-1/4 w-[600px] h-[600px] bg-sky-300/15 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="fixed bottom-1/3 right-10 w-[500px] h-[500px] bg-blue-400/10 rounded-full blur-3xl pointer-events-none -z-10" />
       {/* Top Navbar */}
       <Navbar
         onOpenPledge={() => setIsPledgeOpen(true)}

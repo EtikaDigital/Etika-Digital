@@ -278,23 +278,23 @@ export const CertificateModal: React.FC<CertificateModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-neutral-950/85 backdrop-blur-md overflow-y-auto">
-      <div className="relative w-full max-w-4xl bg-white rounded-3xl shadow-2xl overflow-hidden border border-neutral-300 my-4 sm:my-8 flex flex-col max-h-[92vh]">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-blue-950/80 backdrop-blur-md overflow-y-auto">
+      <div className="relative w-full max-w-4xl bg-white rounded-3xl shadow-2xl overflow-hidden border border-sky-300 my-4 sm:my-8 flex flex-col max-h-[92vh]">
         
         {/* Sticky Modal Top Bar with Clear Actions */}
-        <div className="sticky top-0 z-20 px-4 sm:px-6 py-3.5 bg-neutral-900 text-white flex flex-wrap items-center justify-between gap-3 shadow-md no-print border-b border-neutral-800">
+        <div className="sticky top-0 z-20 px-4 sm:px-6 py-3.5 bg-gradient-to-r from-blue-950 via-blue-900 to-indigo-950 text-white flex flex-wrap items-center justify-between gap-3 shadow-md no-print border-b border-sky-800/60">
           <div className="flex items-center gap-2">
             <button
               onClick={onClose}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-neutral-800 hover:bg-neutral-700 text-xs font-semibold text-neutral-200 hover:text-white transition-colors"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-900/60 hover:bg-blue-800 text-xs font-semibold text-sky-100 hover:text-white transition-colors cursor-pointer border border-sky-700/50"
               title="Kembali ke tampilan kuis"
             >
               <ArrowLeft className="w-4 h-4" />
               <span>Kembali</span>
             </button>
-            <div className="hidden sm:flex items-center gap-2 pl-2 border-l border-neutral-700">
+            <div className="hidden sm:flex items-center gap-2 pl-2 border-l border-sky-800">
               <Award className="w-4 h-4 text-amber-400" />
-              <span className="text-xs font-bold tracking-wide">Sertifikat Resmi Duta Etika Digital</span>
+              <span className="text-xs font-bold tracking-wide text-sky-100">Sertifikat Resmi Duta Etika Digital</span>
             </div>
           </div>
 
@@ -302,7 +302,7 @@ export const CertificateModal: React.FC<CertificateModalProps> = ({
             <button
               onClick={handleDownloadCertificatePng}
               disabled={isGeneratingImg}
-              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-amber-400 text-neutral-950 hover:bg-amber-300 text-xs font-bold transition-all shadow-xs disabled:opacity-50"
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-gradient-to-r from-sky-400 to-blue-500 text-white hover:from-sky-300 hover:to-blue-400 text-xs font-bold transition-all shadow-xs disabled:opacity-50 cursor-pointer"
             >
               <Download className="w-4 h-4" />
               <span>{isGeneratingImg ? 'Menyiapkan...' : 'Download (PNG HD)'}</span>
@@ -310,7 +310,7 @@ export const CertificateModal: React.FC<CertificateModalProps> = ({
 
             <button
               onClick={handlePrint}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-neutral-800 hover:bg-neutral-700 text-xs font-semibold text-white transition-colors"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-900/60 hover:bg-blue-800 text-xs font-semibold text-white transition-colors cursor-pointer border border-sky-700/50"
             >
               <Printer className="w-4 h-4" />
               <span className="hidden sm:inline">Cetak / PDF</span>
@@ -318,7 +318,7 @@ export const CertificateModal: React.FC<CertificateModalProps> = ({
 
             <button
               onClick={onClose}
-              className="p-1.5 rounded-lg text-neutral-400 hover:text-white hover:bg-neutral-800 transition-colors ml-1"
+              className="p-1.5 rounded-lg text-sky-300 hover:text-white hover:bg-blue-900/80 transition-colors ml-1 cursor-pointer"
               aria-label="Tutup Modal"
               title="Tutup & Kembali"
             >

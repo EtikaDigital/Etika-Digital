@@ -53,28 +53,28 @@ export const DilemmaSimulator: React.FC = () => {
   const normalizedScore = Math.max(0, Math.min(100, Math.round((totalScore / maxPossibleScore) * 100)));
 
   return (
-    <section id="dilema" className="py-20 bg-neutral-100/60 border-b border-neutral-200">
+    <section id="dilema" className="py-20 bg-gradient-to-b from-[#ebf5fe] via-[#e2f0fc] to-white border-b border-sky-200/80">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3 mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-900 text-white text-xs font-semibold">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-blue-950 via-blue-900 to-indigo-950 text-sky-200 text-xs font-semibold border border-sky-400/30 shadow-xs">
             <Scale className="w-3.5 h-3.5 text-amber-400" />
-            <span>Simulasi Interaktif: Uji Moral & Keputusan Digital</span>
+            <span>Simulasi Interaktif: Uji Moral &amp; Keputusan Digital</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-neutral-950 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-blue-950 tracking-tight">
             Bagaimana Kamu Bertindak Saat Dilema Terjadi?
           </h2>
-          <p className="text-neutral-600 text-sm sm:text-base">
+          <p className="text-slate-600 text-sm sm:text-base">
             Dunia nyata penuh situasi abu-abu. Uji kompas moral digitalmu dalam skenario nyata yang sering dihadapi warganet Indonesia.
           </p>
         </div>
 
         {/* Status Bar */}
-        <div className="flex flex-wrap items-center justify-between gap-4 p-4 rounded-2xl bg-white border border-neutral-200 shadow-2xs mb-6">
+        <div className="flex flex-wrap items-center justify-between gap-4 p-4 rounded-2xl bg-white/95 border border-sky-200 shadow-xs mb-6">
           <div className="flex items-center gap-2">
-            <span className="text-xs font-bold text-neutral-500 uppercase tracking-wider">Skenario:</span>
-            <span className="text-sm font-extrabold text-neutral-900">
+            <span className="text-xs font-bold text-sky-800 uppercase tracking-wider">Skenario:</span>
+            <span className="text-sm font-extrabold text-blue-950">
               {currentIdx + 1} dari {DILEMMA_SCENARIOS.length}
             </span>
           </div>
@@ -90,10 +90,10 @@ export const DilemmaSimulator: React.FC = () => {
                   onClick={() => setCurrentIdx(i)}
                   className={`w-3 h-3 rounded-full transition-all ${
                     isCurrent
-                      ? 'ring-2 ring-neutral-900 bg-neutral-900 scale-110'
+                      ? 'ring-2 ring-blue-950 bg-blue-950 scale-110'
                       : isAnswered
-                      ? 'bg-emerald-500'
-                      : 'bg-neutral-300 hover:bg-neutral-400'
+                      ? 'bg-sky-500'
+                      : 'bg-sky-200 hover:bg-sky-300'
                   }`}
                   title={`Kasus ${i + 1}: ${sc.title}`}
                 />
@@ -103,12 +103,12 @@ export const DilemmaSimulator: React.FC = () => {
 
           <div className="flex items-center gap-3">
             <div className="text-right">
-              <span className="text-[11px] text-neutral-500 block uppercase font-medium">Skor Integritas</span>
-              <span className="text-sm font-extrabold text-neutral-950">{totalScore} Poin</span>
+              <span className="text-[11px] text-slate-500 block uppercase font-medium">Skor Integritas</span>
+              <span className="text-sm font-extrabold text-blue-950">{totalScore} Poin</span>
             </div>
             <button
               onClick={handleReset}
-              className="p-2 rounded-lg border border-neutral-200 text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100 transition-colors"
+              className="p-2 rounded-lg border border-sky-200 text-slate-600 hover:text-blue-900 hover:bg-sky-50 transition-colors"
               title="Mulai Ulang Simulasi"
             >
               <RotateCcw className="w-4 h-4" />
@@ -117,7 +117,7 @@ export const DilemmaSimulator: React.FC = () => {
         </div>
 
         {/* Main Scenario Card */}
-        <div className="rounded-3xl border border-neutral-200 bg-white p-6 sm:p-10 shadow-sm space-y-6">
+        <div className="rounded-3xl border border-sky-200 bg-white p-6 sm:p-10 shadow-sm space-y-6">
           
           {/* Scenario Meta */}
           <div className="flex flex-wrap items-center justify-between gap-3 border-b border-neutral-100 pb-4">
@@ -127,17 +127,17 @@ export const DilemmaSimulator: React.FC = () => {
                 <span className="text-xs font-bold text-neutral-500 uppercase tracking-wider block">
                   Kategori: {scenario.category}
                 </span>
-                <h3 className="text-xl font-bold text-neutral-900">{scenario.title}</h3>
+                <h3 className="text-xl font-bold text-blue-950">{scenario.title}</h3>
               </div>
             </div>
-            <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-neutral-100 text-neutral-700">
+            <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-sky-100 text-sky-800 border border-sky-200">
               Tingkat: {scenario.difficulty}
             </span>
           </div>
 
           {/* Context Narrative */}
-          <div className="p-5 rounded-2xl bg-neutral-50 border border-neutral-200/80 text-sm text-neutral-800 leading-relaxed">
-            <p className="font-semibold text-neutral-900 mb-1 text-xs uppercase tracking-wider text-neutral-500">
+          <div className="p-5 rounded-2xl bg-sky-50/60 border border-sky-200/80 text-sm text-slate-800 leading-relaxed">
+            <p className="font-semibold text-sky-800 mb-1 text-xs uppercase tracking-wider">
               Skenario Kasus:
             </p>
             {scenario.context}
@@ -145,7 +145,7 @@ export const DilemmaSimulator: React.FC = () => {
 
           {/* Choices List */}
           <div className="space-y-3 pt-2">
-            <label className="text-xs font-bold uppercase tracking-wider text-neutral-600 block">
+            <label className="text-xs font-bold uppercase tracking-wider text-sky-800 block">
               Apa tindakan yang akan kamu ambil?
             </label>
 
@@ -154,7 +154,7 @@ export const DilemmaSimulator: React.FC = () => {
                 const isThisSelected = userChoice?.id === choice.id;
                 const showFeedback = !!userChoice;
 
-                let borderClass = 'border-neutral-200 hover:border-neutral-400 bg-white';
+                let borderClass = 'border-sky-200 hover:border-sky-400 bg-white';
                 if (showFeedback) {
                   if (choice.isEthical) {
                     borderClass = isThisSelected
@@ -163,7 +163,7 @@ export const DilemmaSimulator: React.FC = () => {
                   } else {
                     borderClass = isThisSelected
                       ? 'border-red-500 bg-red-50/60 ring-2 ring-red-500'
-                      : 'border-neutral-200 opacity-60';
+                      : 'border-slate-200 opacity-60';
                   }
                 }
 
@@ -183,16 +183,16 @@ export const DilemmaSimulator: React.FC = () => {
                         ) : isThisSelected ? (
                           <XCircle className="w-5 h-5 text-red-600" />
                         ) : (
-                          <span className="w-5 h-5 rounded-full border border-neutral-300 inline-block" />
+                          <span className="w-5 h-5 rounded-full border border-slate-300 inline-block" />
                         )
                       ) : (
-                        <span className="w-5 h-5 rounded-full border-2 border-neutral-400 flex items-center justify-center text-[10px] font-bold text-neutral-600">
+                        <span className="w-5 h-5 rounded-full border-2 border-sky-400 flex items-center justify-center text-[10px] font-bold text-sky-800">
                           {choice.id.replace('c', '')}
                         </span>
                       )}
                     </div>
                     <div className="flex-1">
-                      <span className="text-neutral-900 leading-snug">{choice.text}</span>
+                      <span className="text-slate-900 leading-snug">{choice.text}</span>
                       {showFeedback && (
                         <span className={`block text-xs font-bold mt-1 ${choice.score > 0 ? 'text-emerald-700' : 'text-red-700'}`}>
                           {choice.score > 0 ? `+${choice.score} Poin (Pilihan Bijak)` : `${choice.score} Poin (Beresiko / Tidak Etis)`}
@@ -207,12 +207,12 @@ export const DilemmaSimulator: React.FC = () => {
 
           {/* Feedback & Deep Dive Analysis when answered */}
           {userChoice && (
-            <div className="p-6 rounded-2xl bg-neutral-900 text-white space-y-4 animate-in fade-in-50 duration-300">
-              <div className="flex items-center justify-between border-b border-neutral-800 pb-3">
+            <div className="p-6 rounded-2xl bg-gradient-to-br from-blue-950 via-[#0b2447] to-[#06162d] text-white space-y-4 border border-sky-800/60 shadow-xl animate-in fade-in-50 duration-300">
+              <div className="flex items-center justify-between border-b border-sky-800/60 pb-3">
                 <div className="flex items-center gap-2">
                   <Sparkles className="w-4 h-4 text-amber-400" />
-                  <span className="text-xs font-bold uppercase tracking-wider text-neutral-300">
-                    Analisis Dampak & Evaluasi Etika
+                  <span className="text-xs font-bold uppercase tracking-wider text-sky-200">
+                    Analisis Dampak &amp; Evaluasi Etika
                   </span>
                 </div>
                 <span className={`text-xs font-extrabold px-2.5 py-1 rounded-full ${
@@ -222,29 +222,29 @@ export const DilemmaSimulator: React.FC = () => {
                 </span>
               </div>
 
-              <p className="text-sm text-neutral-200 leading-relaxed">
+              <p className="text-sm text-sky-100/95 leading-relaxed">
                 {userChoice.ethicalEvaluation}
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-2">
-                <div className="p-3.5 rounded-xl bg-neutral-800/90 border border-neutral-700 text-xs space-y-1">
+                <div className="p-3.5 rounded-xl bg-sky-950/70 border border-sky-800/60 text-xs space-y-1">
                   <div className="flex items-center gap-1.5 font-bold text-amber-300">
                     <Gavel className="w-3.5 h-3.5" />
-                    <span>Aspek Hukum & Regulasi:</span>
+                    <span>Aspek Hukum &amp; Regulasi:</span>
                   </div>
-                  <p className="text-neutral-300 leading-normal">{userChoice.legalImpact}</p>
+                  <p className="text-sky-200/90 leading-normal">{userChoice.legalImpact}</p>
                 </div>
 
-                <div className="p-3.5 rounded-xl bg-neutral-800/90 border border-neutral-700 text-xs space-y-1">
-                  <div className="flex items-center gap-1.5 font-bold text-cyan-300">
+                <div className="p-3.5 rounded-xl bg-sky-950/70 border border-sky-800/60 text-xs space-y-1">
+                  <div className="flex items-center gap-1.5 font-bold text-sky-300">
                     <Users className="w-3.5 h-3.5" />
-                    <span>Dampak Sosial & Psikologis:</span>
+                    <span>Dampak Sosial &amp; Psikologis:</span>
                   </div>
-                  <p className="text-neutral-300 leading-normal">{userChoice.socialImpact}</p>
+                  <p className="text-sky-200/90 leading-normal">{userChoice.socialImpact}</p>
                 </div>
               </div>
 
-              <div className="p-3.5 rounded-xl bg-neutral-800 border border-neutral-700 flex items-start gap-2.5 text-xs text-neutral-200">
+              <div className="p-3.5 rounded-xl bg-sky-950/90 border border-sky-700/60 flex items-start gap-2.5 text-xs text-sky-100">
                 <Lightbulb className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
                 <div>
                   <strong className="text-white">Rekomendasi Terbaik: </strong>
@@ -257,7 +257,7 @@ export const DilemmaSimulator: React.FC = () => {
                 <button
                   onClick={handlePrev}
                   disabled={currentIdx === 0}
-                  className="text-xs font-semibold px-4 py-2 rounded-lg bg-neutral-800 text-neutral-300 hover:bg-neutral-700 disabled:opacity-30 disabled:cursor-not-allowed"
+                  className="text-xs font-semibold px-4 py-2 rounded-lg bg-sky-900/60 text-sky-200 hover:bg-sky-800/70 disabled:opacity-30 disabled:cursor-not-allowed border border-sky-700/40"
                 >
                   Kasus Sebelumnya
                 </button>
@@ -265,7 +265,7 @@ export const DilemmaSimulator: React.FC = () => {
                 {currentIdx < DILEMMA_SCENARIOS.length - 1 ? (
                   <button
                     onClick={handleNext}
-                    className="inline-flex items-center gap-1.5 text-xs font-bold px-5 py-2.5 rounded-lg bg-white text-neutral-900 hover:bg-neutral-100 transition-colors"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold px-5 py-2.5 rounded-lg bg-gradient-to-r from-sky-400 to-blue-500 hover:from-sky-300 hover:to-blue-400 text-blue-950 transition-colors shadow-sm"
                   >
                     <span>Lanjut ke Kasus Berikutnya</span>
                     <ChevronRight className="w-4 h-4" />

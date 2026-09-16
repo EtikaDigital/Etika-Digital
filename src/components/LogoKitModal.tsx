@@ -89,21 +89,21 @@ export const LogoKitModal: React.FC<LogoKitModalProps> = ({ isOpen, onClose }) =
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-neutral-950/80 backdrop-blur-sm overflow-y-auto">
-      <div className="relative w-full max-w-4xl bg-white rounded-3xl shadow-2xl overflow-hidden border border-neutral-200 my-8">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-blue-950/80 backdrop-blur-sm overflow-y-auto">
+      <div className="relative w-full max-w-4xl bg-white rounded-3xl shadow-2xl overflow-hidden border border-sky-300 my-8">
         
         {/* Header */}
-        <div className="p-5 bg-neutral-900 text-white flex items-center justify-between">
+        <div className="p-5 bg-gradient-to-r from-blue-950 via-blue-900 to-indigo-950 text-white flex items-center justify-between border-b border-sky-800/60">
           <div className="flex items-center gap-2.5">
-            <Layers className="w-5 h-5 text-amber-400" />
+            <Layers className="w-5 h-5 text-sky-400" />
             <div>
-              <h3 className="text-sm font-bold">Logo & Brand Identity Kit — Etika Digital</h3>
-              <p className="text-[11px] text-neutral-400">Aset Vektor, Panduan Penggunaan & Unduh Resmi</p>
+              <h3 className="text-sm font-bold">Logo &amp; Brand Identity Kit — Etika Digital</h3>
+              <p className="text-[11px] text-sky-300/80">Aset Vektor, Panduan Penggunaan &amp; Unduh Resmi</p>
             </div>
           </div>
           <button
             onClick={onClose}
-            className="p-1.5 rounded-lg text-neutral-400 hover:text-white hover:bg-neutral-800 transition-colors"
+            className="p-1.5 rounded-lg text-sky-300 hover:text-white hover:bg-blue-900/80 transition-colors cursor-pointer"
           >
             <X className="w-5 h-5" />
           </button>
@@ -116,13 +116,13 @@ export const LogoKitModal: React.FC<LogoKitModalProps> = ({ isOpen, onClose }) =
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             
             {/* Light Mode Preview */}
-            <div className="p-8 rounded-3xl bg-neutral-50 border border-neutral-200 flex flex-col items-center justify-center space-y-4 text-center">
-              <Logo variant="stacked" size="lg" symbolColor="#000000" textColor="text-neutral-900" />
-              <div className="pt-4 border-t border-neutral-200 w-full flex items-center justify-between text-xs">
-                <span className="font-semibold text-neutral-700">Versi Standar (Light)</span>
+            <div className="p-8 rounded-3xl bg-sky-50/50 border border-sky-200 flex flex-col items-center justify-center space-y-4 text-center">
+              <Logo variant="stacked" size="lg" symbolColor="#1e3a8a" textColor="text-blue-950" />
+              <div className="pt-4 border-t border-sky-200 w-full flex items-center justify-between text-xs">
+                <span className="font-semibold text-sky-900">Versi Standar (Light)</span>
                 <button
                   onClick={() => handleDownloadPng(false)}
-                  className="inline-flex items-center gap-1 font-bold text-neutral-900 hover:underline"
+                  className="inline-flex items-center gap-1 font-bold text-blue-900 hover:underline cursor-pointer"
                 >
                   <Download className="w-3.5 h-3.5" />
                   <span>Unduh PNG</span>
@@ -131,13 +131,13 @@ export const LogoKitModal: React.FC<LogoKitModalProps> = ({ isOpen, onClose }) =
             </div>
 
             {/* Dark Mode Preview */}
-            <div className="p-8 rounded-3xl bg-neutral-950 border border-neutral-800 flex flex-col items-center justify-center space-y-4 text-center">
+            <div className="p-8 rounded-3xl bg-gradient-to-br from-[#0c274e] to-[#081b35] border border-sky-800/80 flex flex-col items-center justify-center space-y-4 text-center">
               <Logo variant="stacked" size="lg" symbolColor="#ffffff" textColor="text-white" />
-              <div className="pt-4 border-t border-neutral-800 w-full flex items-center justify-between text-xs text-neutral-300">
-                <span className="font-semibold text-neutral-300">Versi Inverted (Dark)</span>
+              <div className="pt-4 border-t border-sky-800 w-full flex items-center justify-between text-xs text-sky-200">
+                <span className="font-semibold text-sky-200">Versi Inverted (Dark)</span>
                 <button
                   onClick={() => handleDownloadPng(true)}
-                  className="inline-flex items-center gap-1 font-bold text-amber-400 hover:underline"
+                  className="inline-flex items-center gap-1 font-bold text-sky-400 hover:underline cursor-pointer"
                 >
                   <Download className="w-3.5 h-3.5" />
                   <span>Unduh PNG</span>
@@ -148,22 +148,22 @@ export const LogoKitModal: React.FC<LogoKitModalProps> = ({ isOpen, onClose }) =
           </div>
 
           {/* Quick Download & Copy Strip */}
-          <div className="p-5 rounded-2xl bg-neutral-100 border border-neutral-200 flex flex-wrap items-center justify-between gap-4">
+          <div className="p-5 rounded-2xl bg-gradient-to-r from-sky-50 to-blue-50/60 border border-sky-200 flex flex-wrap items-center justify-between gap-4">
             <div className="space-y-0.5">
-              <span className="text-xs font-bold text-neutral-900 block">Unduh Format Master Vektor (SVG):</span>
-              <p className="text-[11px] text-neutral-600">Resolusi tanpa batas untuk kebutuhan cetak, web, aplikasi, dan banner.</p>
+              <span className="text-xs font-bold text-blue-950 block">Unduh Format Master Vektor (SVG):</span>
+              <p className="text-[11px] text-slate-600">Resolusi tanpa batas untuk kebutuhan cetak, web, aplikasi, dan banner.</p>
             </div>
             <div className="flex items-center gap-2">
               <button
                 onClick={handleCopySvg}
-                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl border border-neutral-300 bg-white text-xs font-semibold text-neutral-800 hover:bg-neutral-50 shadow-2xs"
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl border border-sky-300 bg-white text-xs font-semibold text-slate-800 hover:bg-sky-50 shadow-2xs cursor-pointer"
               >
                 {copiedFormat === 'svg-code' ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
                 <span>{copiedFormat === 'svg-code' ? 'Kode Tersalin!' : 'Salin Kode SVG'}</span>
               </button>
               <button
                 onClick={handleDownloadSvg}
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-neutral-900 text-white text-xs font-bold hover:bg-neutral-800 shadow-xs"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-gradient-to-r from-blue-900 to-blue-950 hover:from-blue-800 hover:to-blue-900 text-white text-xs font-bold shadow-xs cursor-pointer"
               >
                 <Download className="w-3.5 h-3.5" />
                 <span>Unduh File .SVG</span>

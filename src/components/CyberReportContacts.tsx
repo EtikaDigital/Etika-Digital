@@ -174,65 +174,65 @@ export const CyberReportContacts: React.FC = () => {
   });
 
   return (
-    <section id="aduan-siber" className="py-20 bg-neutral-900 text-white relative overflow-hidden">
+    <section id="aduan-siber" className="py-20 bg-gradient-to-b from-[#071933] via-[#0b2447] to-[#041021] text-white border-t border-sky-900/60 border-b border-sky-900/60 relative overflow-hidden">
       {/* Background accents */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-red-500/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-xs font-semibold tracking-wide">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-500/15 border border-red-400/30 text-red-300 text-xs font-semibold tracking-wide">
             <ShieldAlert className="w-4 h-4 text-red-400 animate-pulse" />
-            <span>Kanal Resmi Tanggap Darurat & Penegakan Hukum RI</span>
+            <span>Kanal Resmi Tanggap Darurat &amp; Penegakan Hukum RI</span>
           </div>
           
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
-            Pusat Aduan & Bantuan Kejahatan Siber
+            Pusat Aduan &amp; Bantuan Kejahatan Siber
           </h2>
           
-          <p className="text-neutral-400 text-sm sm:text-base leading-relaxed">
+          <p className="text-sky-200/80 text-sm sm:text-base leading-relaxed">
             Menjadi korban penipuan online, pemerasan, peretasan, doxing, atau menemukan konten berbahaya? Laporkan langsung ke lembaga resmi pemerintah Indonesia berikut ini.
           </p>
         </div>
 
         {/* Emergency Procedure Checklist (Important Advice) */}
-        <div className="mb-12 p-6 sm:p-8 rounded-3xl bg-neutral-950/80 border border-neutral-800 shadow-xl space-y-4">
-          <div className="flex items-center gap-2.5 text-amber-400 font-bold text-sm sm:text-base">
+        <div className="mb-12 p-6 sm:p-8 rounded-3xl bg-blue-950/70 border border-sky-800/60 shadow-xl space-y-4">
+          <div className="flex items-center gap-2.5 text-amber-300 font-bold text-sm sm:text-base">
             <AlertTriangle className="w-5 h-5 shrink-0" />
             <span>Prosedur Cepat: 4 Bukti Wajib Sebelum Melapor</span>
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-2">
-            <div className="p-4 rounded-2xl bg-neutral-900/90 border border-neutral-800/80 space-y-1.5">
-              <span className="text-[10px] font-mono text-amber-400 font-bold uppercase tracking-wider block">Langkah 1</span>
+            <div className="p-4 rounded-2xl bg-blue-900/40 border border-sky-800/40 space-y-1.5">
+              <span className="text-[10px] font-mono text-amber-300 font-bold uppercase tracking-wider block">Langkah 1</span>
               <h4 className="text-xs font-bold text-white">Tangkapan Layar Utuh</h4>
-              <p className="text-[11px] text-neutral-400 leading-relaxed">
+              <p className="text-[11px] text-sky-200/70 leading-relaxed">
                 Screenshot chat, postingan, nomor HP, URL website, serta tanggal dan jam kejadian sebelum pelaku menghapusnya.
               </p>
             </div>
 
-            <div className="p-4 rounded-2xl bg-neutral-900/90 border border-neutral-800/80 space-y-1.5">
-              <span className="text-[10px] font-mono text-amber-400 font-bold uppercase tracking-wider block">Langkah 2</span>
-              <h4 className="text-xs font-bold text-white">Bukti Finansial & Rekening</h4>
-              <p className="text-[11px] text-neutral-400 leading-relaxed">
+            <div className="p-4 rounded-2xl bg-blue-900/40 border border-sky-800/40 space-y-1.5">
+              <span className="text-[10px] font-mono text-amber-300 font-bold uppercase tracking-wider block">Langkah 2</span>
+              <h4 className="text-xs font-bold text-white">Bukti Finansial &amp; Rekening</h4>
+              <p className="text-[11px] text-sky-200/70 leading-relaxed">
                 Simpan bukti transfer, mutasi bank/e-wallet, nomor rekening pelaku, dan nama pemilik rekening penipu.
               </p>
             </div>
 
-            <div className="p-4 rounded-2xl bg-neutral-900/90 border border-neutral-800/80 space-y-1.5">
-              <span className="text-[10px] font-mono text-amber-400 font-bold uppercase tracking-wider block">Langkah 3</span>
+            <div className="p-4 rounded-2xl bg-blue-900/40 border border-sky-800/40 space-y-1.5">
+              <span className="text-[10px] font-mono text-amber-300 font-bold uppercase tracking-wider block">Langkah 3</span>
               <h4 className="text-xs font-bold text-white">Salin Tautan Profil Pelaku</h4>
-              <p className="text-[11px] text-neutral-400 leading-relaxed">
+              <p className="text-[11px] text-sky-200/70 leading-relaxed">
                 Salin link tautan profil akun pelaku (bukan hanya username), ID grup medsos, atau email pengirim.
               </p>
             </div>
 
-            <div className="p-4 rounded-2xl bg-neutral-900/90 border border-neutral-800/80 space-y-1.5">
-              <span className="text-[10px] font-mono text-amber-400 font-bold uppercase tracking-wider block">Langkah 4</span>
+            <div className="p-4 rounded-2xl bg-blue-900/40 border border-sky-800/40 space-y-1.5">
+              <span className="text-[10px] font-mono text-amber-300 font-bold uppercase tracking-wider block">Langkah 4</span>
               <h4 className="text-xs font-bold text-white">Tulis Kronologi Runtut</h4>
-              <p className="text-[11px] text-neutral-400 leading-relaxed">
+              <p className="text-[11px] text-sky-200/70 leading-relaxed">
                 Tulis kronologi singkat: waktu awal interaksi, modus operandi, janji pelaku, dan total kerugian yang diderita.
               </p>
             </div>
@@ -255,10 +255,10 @@ export const CyberReportContacts: React.FC = () => {
               <button
                 key={tab.id}
                 onClick={() => setSelectedCategory(tab.id)}
-                className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all ${
+                className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
                   selectedCategory === tab.id
-                    ? 'bg-white text-neutral-950 shadow-md'
-                    : 'bg-neutral-800 text-neutral-300 hover:bg-neutral-700 hover:text-white'
+                    ? 'bg-gradient-to-r from-sky-400 to-blue-500 text-white font-bold shadow-md'
+                    : 'bg-blue-900/40 text-sky-200 hover:bg-blue-800/60 hover:text-white border border-sky-800/40'
                 }`}
               >
                 {tab.label}
@@ -268,13 +268,13 @@ export const CyberReportContacts: React.FC = () => {
 
           {/* Search Box */}
           <div className="relative w-full md:w-72">
-            <Search className="w-4 h-4 text-neutral-500 absolute left-3.5 top-3" />
+            <Search className="w-4 h-4 text-sky-400 absolute left-3.5 top-3" />
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Cari jenis kejahatan atau lembaga..."
-              className="w-full pl-9 pr-4 py-2 rounded-xl bg-neutral-800/90 border border-neutral-700 text-xs text-white placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-white/20"
+              className="w-full pl-9 pr-4 py-2 rounded-xl bg-blue-900/40 border border-sky-800/60 text-xs text-white placeholder:text-sky-300/50 focus:outline-none focus:ring-2 focus:ring-sky-400"
             />
           </div>
 
@@ -285,14 +285,14 @@ export const CyberReportContacts: React.FC = () => {
           {filteredAgencies.map((item) => (
             <div
               key={item.id}
-              className="rounded-3xl bg-neutral-950 border border-neutral-800 hover:border-neutral-700 p-6 flex flex-col justify-between transition-all hover:shadow-2xl space-y-6"
+              className="rounded-3xl bg-gradient-to-b from-[#0c274e] to-[#081b35] border border-sky-800/60 hover:border-sky-500/80 p-6 flex flex-col justify-between transition-all hover:shadow-2xl space-y-6 shadow-md"
             >
               
               {/* Card Top */}
               <div className="space-y-4">
                 <div className="flex items-start justify-between gap-3">
                   <div>
-                    <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-neutral-400 block">
+                    <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-sky-300/80 block">
                       {item.agency}
                     </span>
                     <h3 className="text-lg font-bold text-white mt-1 leading-snug">
@@ -300,25 +300,25 @@ export const CyberReportContacts: React.FC = () => {
                     </h3>
                   </div>
                   {item.isUrgent && (
-                    <span className="px-2 py-0.5 rounded-full bg-red-500/10 text-red-400 border border-red-500/30 text-[10px] font-bold uppercase shrink-0">
+                    <span className="px-2 py-0.5 rounded-full bg-red-500/20 text-red-300 border border-red-500/40 text-[10px] font-bold uppercase shrink-0">
                       Prioritas
                     </span>
                   )}
                 </div>
 
-                <p className="text-xs text-neutral-400 leading-relaxed">
+                <p className="text-xs text-sky-100/75 leading-relaxed">
                   {item.description}
                 </p>
 
                 {/* Handled cases list */}
                 <div className="space-y-2 pt-1">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-neutral-400 block">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-sky-300/80 block">
                     Menangani Kasus:
                   </span>
                   <ul className="space-y-1.5">
                     {item.handledCases.map((c, i) => (
-                      <li key={i} className="text-xs text-neutral-300 flex items-start gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-amber-400 mt-1.5 shrink-0" />
+                      <li key={i} className="text-xs text-sky-100/90 flex items-start gap-2">
+                        <span className="w-1.5 h-1.5 rounded-full bg-sky-400 mt-1.5 shrink-0" />
                         <span>{c}</span>
                       </li>
                     ))}
@@ -327,11 +327,11 @@ export const CyberReportContacts: React.FC = () => {
               </div>
 
               {/* Card Bottom / Contacts */}
-              <div className="space-y-3 pt-4 border-t border-neutral-800/80">
+              <div className="space-y-3 pt-4 border-t border-sky-800/60">
                 
                 {/* Hours info */}
-                <div className="flex items-center gap-1.5 text-[11px] text-neutral-400 font-mono">
-                  <Clock className="w-3.5 h-3.5 text-neutral-500" />
+                <div className="flex items-center gap-1.5 text-[11px] text-sky-300/80 font-mono">
+                  <Clock className="w-3.5 h-3.5 text-sky-400" />
                   <span>Waktu Operasional: {item.hours}</span>
                 </div>
 
@@ -340,14 +340,14 @@ export const CyberReportContacts: React.FC = () => {
                   
                   {/* Hotline / Telepon */}
                   {item.hotline && (
-                    <div className="flex items-center justify-between p-2 rounded-xl bg-neutral-900 border border-neutral-800 text-xs">
-                      <div className="flex items-center gap-2 text-neutral-300">
+                    <div className="flex items-center justify-between p-2 rounded-xl bg-blue-950/70 border border-sky-800/60 text-xs">
+                      <div className="flex items-center gap-2 text-sky-200">
                         <PhoneCall className="w-3.5 h-3.5 text-emerald-400" />
                         <span className="font-mono font-bold text-white">{item.hotline}</span>
                       </div>
                       <button
                         onClick={() => copyToClipboard(item.hotline!, `${item.id}-hotline`)}
-                        className="text-[11px] text-neutral-400 hover:text-white flex items-center gap-1 font-semibold"
+                        className="text-[11px] text-sky-300 hover:text-white flex items-center gap-1 font-semibold cursor-pointer"
                         title="Salin Nomor"
                       >
                         {copiedId === `${item.id}-hotline` ? (
@@ -365,14 +365,14 @@ export const CyberReportContacts: React.FC = () => {
 
                   {/* WhatsApp */}
                   {item.whatsapp && (
-                    <div className="flex items-center justify-between p-2 rounded-xl bg-neutral-900 border border-neutral-800 text-xs">
-                      <div className="flex items-center gap-2 text-neutral-300">
+                    <div className="flex items-center justify-between p-2 rounded-xl bg-blue-950/70 border border-sky-800/60 text-xs">
+                      <div className="flex items-center gap-2 text-sky-200">
                         <span className="w-3.5 h-3.5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-[10px] font-bold">WA</span>
                         <span className="font-mono text-white">{item.whatsapp}</span>
                       </div>
                       <button
                         onClick={() => copyToClipboard(item.whatsapp!, `${item.id}-wa`)}
-                        className="text-[11px] text-neutral-400 hover:text-white flex items-center gap-1 font-semibold"
+                        className="text-[11px] text-sky-300 hover:text-white flex items-center gap-1 font-semibold cursor-pointer"
                         title="Salin WhatsApp"
                       >
                         {copiedId === `${item.id}-wa` ? (
@@ -390,14 +390,14 @@ export const CyberReportContacts: React.FC = () => {
 
                   {/* Email */}
                   {item.email && (
-                    <div className="flex items-center justify-between p-2 rounded-xl bg-neutral-900 border border-neutral-800 text-xs">
-                      <div className="flex items-center gap-2 text-neutral-300 truncate max-w-[200px]">
-                        <Mail className="w-3.5 h-3.5 text-neutral-400 shrink-0" />
-                        <span className="font-mono text-neutral-300 truncate text-[11px]">{item.email}</span>
+                    <div className="flex items-center justify-between p-2 rounded-xl bg-blue-950/70 border border-sky-800/60 text-xs">
+                      <div className="flex items-center gap-2 text-sky-200 truncate max-w-[200px]">
+                        <Mail className="w-3.5 h-3.5 text-sky-400 shrink-0" />
+                        <span className="font-mono text-sky-100 truncate text-[11px]">{item.email}</span>
                       </div>
                       <button
                         onClick={() => copyToClipboard(item.email!, `${item.id}-email`)}
-                        className="text-[11px] text-neutral-400 hover:text-white flex items-center gap-1 font-semibold shrink-0"
+                        className="text-[11px] text-sky-300 hover:text-white flex items-center gap-1 font-semibold shrink-0 cursor-pointer"
                         title="Salin Email"
                       >
                         {copiedId === `${item.id}-email` ? (
@@ -420,10 +420,10 @@ export const CyberReportContacts: React.FC = () => {
                   href={item.website}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full mt-2 py-2.5 px-4 rounded-xl bg-neutral-800 hover:bg-neutral-700 text-white text-xs font-bold transition-all flex items-center justify-center gap-2 group shadow-xs"
+                  className="w-full mt-2 py-2.5 px-4 rounded-xl bg-gradient-to-r from-blue-700 to-sky-600 hover:from-blue-600 hover:to-sky-500 text-white text-xs font-bold transition-all flex items-center justify-center gap-2 group shadow-xs cursor-pointer"
                 >
                   <span>Buka Portal Pengaduan Resmi</span>
-                  <ExternalLink className="w-3.5 h-3.5 text-neutral-400 group-hover:text-white transition-colors" />
+                  <ExternalLink className="w-3.5 h-3.5 text-sky-200 group-hover:text-white transition-colors" />
                 </a>
 
               </div>
@@ -433,7 +433,7 @@ export const CyberReportContacts: React.FC = () => {
         </div>
 
         {/* Bottom Safety Commitment */}
-        <div className="mt-12 p-6 rounded-2xl bg-neutral-950 border border-neutral-800 text-center text-xs text-neutral-400 space-y-2">
+        <div className="mt-12 p-6 rounded-2xl bg-blue-950/60 border border-sky-800/50 text-center text-xs text-sky-200/80 space-y-2">
           <p className="font-medium">
             🔒 <strong>Kerahasiaan Pelapor:</strong> Berdasarkan UU Tindak Pidana dan UU PDP, identitas saksi dan pelapor tindak kejahatan siber dilindungi oleh hukum. Jangan ragu melapor untuk menghentikan sindikat kejahatan digital.
           </p>

@@ -37,7 +37,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   ];
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-white/90 backdrop-blur-md border-b border-neutral-200/80 transition-all">
+    <header className="sticky top-0 z-40 w-full bg-white/85 backdrop-blur-md border-b border-sky-200/80 shadow-xs shadow-sky-900/5 transition-all">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between">
         {/* Brand Logo & Name */}
         <a
@@ -45,14 +45,14 @@ export const Navbar: React.FC<NavbarProps> = ({
           className="shrink-0 group flex items-center gap-2.5 transition-transform duration-200 hover:scale-[1.02]"
           aria-label="Kembali ke Beranda Etika Digital"
         >
-          <div className="p-1.5 rounded-xl bg-neutral-100/80 group-hover:bg-neutral-200/60 transition-colors">
-            <Logo variant="icon" size="sm" symbolColor="#0a0a0a" />
+          <div className="p-1.5 rounded-xl bg-gradient-to-tr from-sky-500 via-blue-600 to-blue-700 text-white shadow-xs shadow-sky-500/25 group-hover:from-sky-400 group-hover:to-blue-600 transition-colors">
+            <Logo variant="icon" size="sm" symbolColor="#ffffff" />
           </div>
           <div className="flex flex-col">
-            <span className="font-extrabold text-lg tracking-[0.14em] text-neutral-900 leading-none">
-              ETIKA<span className="font-light tracking-[0.18em] text-neutral-600">DIGITAL</span>
+            <span className="font-extrabold text-lg tracking-[0.14em] text-blue-950 leading-none">
+              ETIKA<span className="font-semibold tracking-[0.18em] text-sky-600">DIGITAL</span>
             </span>
-            <span className="text-[10px] font-medium tracking-wider text-neutral-600 mt-0.5">
+            <span className="text-[10px] font-semibold tracking-wider text-sky-800/80 mt-0.5">
               INDONESIA CYBER ETHICS
             </span>
           </div>
@@ -69,8 +69,8 @@ export const Navbar: React.FC<NavbarProps> = ({
                 href={link.href}
                 className={`whitespace-nowrap shrink-0 inline-flex items-center gap-1.5 px-2 xl:px-2.5 2xl:px-3 py-1.5 text-xs font-semibold rounded-lg transition-colors ${
                   isActive
-                    ? 'bg-neutral-900 text-white'
-                    : 'text-neutral-600 hover:text-neutral-950 hover:bg-neutral-100'
+                    ? 'bg-gradient-to-r from-sky-600 to-blue-700 text-white shadow-xs shadow-sky-600/25'
+                    : 'text-slate-600 hover:text-blue-900 hover:bg-sky-50/80'
                 }`}
               >
                 <Icon className="w-3.5 h-3.5 shrink-0" />
@@ -93,7 +93,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           <button
             onClick={onOpenPledge}
-            className="whitespace-nowrap shrink-0 inline-flex items-center gap-1.5 px-2.5 xl:px-3 2xl:px-3.5 rounded-lg bg-neutral-900 text-xs font-semibold text-white hover:bg-neutral-800 transition-all shadow-xs"
+            className="whitespace-nowrap shrink-0 inline-flex items-center gap-1.5 px-2.5 xl:px-3 2xl:px-3.5 rounded-lg bg-gradient-to-r from-blue-950 via-blue-900 to-indigo-950 text-xs font-semibold text-white hover:from-blue-900 hover:to-indigo-900 transition-all shadow-xs shadow-blue-950/20"
           >
             <FileCheck2 className="w-3.5 h-3.5 text-amber-400 shrink-0" />
             <span className="whitespace-nowrap">Ikrar Digital</span>

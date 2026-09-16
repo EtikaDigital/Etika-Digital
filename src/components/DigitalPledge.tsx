@@ -283,13 +283,13 @@ export const DigitalPledge: React.FC<DigitalPledgeProps> = ({ isOpen, onClose })
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-neutral-950/80 backdrop-blur-sm overflow-y-auto">
-      <div className="relative w-full max-w-3xl bg-white rounded-3xl shadow-2xl overflow-hidden border border-neutral-200 my-8">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-blue-950/80 backdrop-blur-sm overflow-y-auto">
+      <div className="relative w-full max-w-3xl bg-white rounded-3xl shadow-2xl overflow-hidden border border-sky-300 my-8">
         
         {/* Header */}
-        <div className="p-5 bg-neutral-900 text-white flex items-center justify-between no-print">
+        <div className="p-5 bg-gradient-to-r from-blue-950 via-blue-900 to-indigo-950 text-white flex items-center justify-between no-print border-b border-sky-800/60">
           <div className="flex items-center gap-2">
-            <FileCheck2 className="w-5 h-5 text-amber-400" />
+            <FileCheck2 className="w-5 h-5 text-sky-300" />
             <span className="text-sm font-bold">Ikrar Komitmen Warga Digital Beradab</span>
           </div>
           <div className="flex items-center gap-2">
@@ -298,7 +298,7 @@ export const DigitalPledge: React.FC<DigitalPledgeProps> = ({ isOpen, onClose })
                 <button
                   onClick={handleDownloadCertificatePng}
                   disabled={isGeneratingImg}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-400 text-neutral-950 text-xs font-bold hover:bg-amber-300 disabled:opacity-50 transition-all shadow-xs"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gradient-to-r from-sky-400 to-blue-500 text-white text-xs font-bold hover:from-sky-300 hover:to-blue-400 disabled:opacity-50 transition-all shadow-xs cursor-pointer"
                   title="Unduh Piagam Format Gambar HD (PNG)"
                 >
                   <Download className="w-3.5 h-3.5" />
@@ -306,7 +306,7 @@ export const DigitalPledge: React.FC<DigitalPledgeProps> = ({ isOpen, onClose })
                 </button>
                 <button
                   onClick={handlePrint}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-neutral-800 text-white hover:bg-neutral-700 text-xs font-semibold transition-colors"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-900/60 text-white hover:bg-blue-800 text-xs font-semibold transition-colors cursor-pointer border border-sky-700/50"
                   title="Cetak atau Simpan PDF"
                 >
                   <Printer className="w-3.5 h-3.5" />
@@ -316,7 +316,7 @@ export const DigitalPledge: React.FC<DigitalPledgeProps> = ({ isOpen, onClose })
             )}
             <button
               onClick={onClose}
-              className="p-1.5 rounded-lg text-neutral-400 hover:text-white hover:bg-neutral-800 transition-colors"
+              className="p-1.5 rounded-lg text-sky-300 hover:text-white hover:bg-blue-900/80 transition-colors cursor-pointer"
               aria-label="Tutup"
             >
               <X className="w-5 h-5" />
@@ -329,10 +329,10 @@ export const DigitalPledge: React.FC<DigitalPledgeProps> = ({ isOpen, onClose })
           {!isSigned ? (
             <form onSubmit={handleSign} className="space-y-5">
               <div className="space-y-1">
-                <h3 className="text-xl font-extrabold text-neutral-900">
+                <h3 className="text-xl font-extrabold text-blue-950">
                   Janji Keadaban di Ruang Siber
                 </h3>
-                <p className="text-xs text-neutral-600">
+                <p className="text-xs text-slate-600">
                   Pilihlah komitmen etika digital yang siap kamu pegang teguh dalam kehidupan bersosial media sehari-hari. Setelah menandatangani, kamu dapat langsung <strong>mengunduh Piagam Penghargaan Resmi</strong> dalam resolusi tinggi.
                 </p>
               </div>
@@ -347,13 +347,13 @@ export const DigitalPledge: React.FC<DigitalPledgeProps> = ({ isOpen, onClose })
                       onClick={() => handleTogglePledge(idx)}
                       className={`p-3.5 rounded-xl border text-xs font-medium cursor-pointer transition-all flex items-start gap-3 select-none ${
                         isChecked
-                          ? 'border-neutral-900 bg-neutral-900 text-white shadow-xs'
-                          : 'border-neutral-200 bg-neutral-50 text-neutral-700 hover:bg-neutral-100'
+                          ? 'border-blue-900 bg-gradient-to-r from-blue-950 to-blue-900 text-white shadow-xs'
+                          : 'border-sky-200/80 bg-sky-50/40 text-slate-700 hover:bg-sky-50'
                       }`}
                     >
                       <CheckCircle2
                         className={`w-4 h-4 shrink-0 mt-0.5 ${
-                          isChecked ? 'text-amber-400' : 'text-neutral-400'
+                          isChecked ? 'text-sky-300' : 'text-sky-400'
                         }`}
                       />
                       <span>{item}</span>
@@ -364,7 +364,7 @@ export const DigitalPledge: React.FC<DigitalPledgeProps> = ({ isOpen, onClose })
 
               {/* Name Input */}
               <div className="space-y-1.5 pt-2">
-                <label className="text-xs font-bold uppercase tracking-wider text-neutral-700 block">
+                <label className="text-xs font-bold uppercase tracking-wider text-sky-800 block">
                   Nama Lengkap untuk Dicetak pada Piagam:
                 </label>
                 <input
@@ -373,7 +373,7 @@ export const DigitalPledge: React.FC<DigitalPledgeProps> = ({ isOpen, onClose })
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Ketik Nama Lengkap Anda (Contoh: Budi Santoso)..."
                   required
-                  className="w-full p-3.5 rounded-xl border border-neutral-300 text-sm focus:outline-none focus:ring-2 focus:ring-neutral-900 shadow-xs"
+                  className="w-full p-3.5 rounded-xl border border-sky-300 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-500 shadow-xs"
                 />
               </div>
 
@@ -381,10 +381,10 @@ export const DigitalPledge: React.FC<DigitalPledgeProps> = ({ isOpen, onClose })
               <button
                 type="submit"
                 disabled={!name.trim() || selectedPledges.length === 0}
-                className="w-full py-4 rounded-xl bg-neutral-900 text-white text-sm font-bold hover:bg-neutral-800 disabled:opacity-40 transition-all shadow-md flex items-center justify-center gap-2"
+                className="w-full py-4 rounded-xl bg-gradient-to-r from-blue-900 to-blue-950 text-white text-sm font-bold hover:from-blue-800 hover:to-blue-900 disabled:opacity-40 transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer"
               >
-                <Sparkles className="w-4 h-4 text-amber-400" />
-                <span>Tandatangani Ikrar & Terbitkan Piagam</span>
+                <Sparkles className="w-4 h-4 text-amber-300" />
+                <span>Tandatangani Ikrar &amp; Terbitkan Piagam</span>
               </button>
             </form>
           ) : (
@@ -392,7 +392,7 @@ export const DigitalPledge: React.FC<DigitalPledgeProps> = ({ isOpen, onClose })
             <div className="space-y-6 text-center animate-in fade-in-50">
               
               {/* Notice Banner */}
-              <div className="p-3.5 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-900 text-xs font-semibold flex items-center justify-between gap-2 no-print">
+              <div className="p-3.5 rounded-2xl bg-sky-50 border border-sky-200 text-sky-950 text-xs font-semibold flex items-center justify-between gap-2 no-print">
                 <div className="flex items-center gap-2 text-left">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
                   <span>Piagam Komitmen Berhasil Diterbitkan! Anda dapat mengunduh atau mencetaknya sekarang.</span>
@@ -400,7 +400,7 @@ export const DigitalPledge: React.FC<DigitalPledgeProps> = ({ isOpen, onClose })
                 <button
                   onClick={handleDownloadCertificatePng}
                   disabled={isGeneratingImg}
-                  className="px-3 py-1.5 rounded-lg bg-emerald-700 text-white text-xs font-bold hover:bg-emerald-800 shrink-0 transition-colors shadow-2xs"
+                  className="px-3 py-1.5 rounded-lg bg-gradient-to-r from-sky-500 to-blue-600 text-white text-xs font-bold hover:from-sky-400 hover:to-blue-500 shrink-0 transition-colors shadow-2xs cursor-pointer"
                 >
                   {isGeneratingImg ? 'Menyimpan...' : 'Unduh PNG'}
                 </button>

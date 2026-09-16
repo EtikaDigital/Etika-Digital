@@ -115,19 +115,19 @@ export const FootprintAudit: React.FC = () => {
   }
 
   return (
-    <section id="jejak" className="py-20 bg-white border-b border-neutral-200">
+    <section id="jejak" className="py-20 bg-white border-b border-sky-200/80">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3 mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-900 text-white text-xs font-semibold">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-blue-950 via-blue-900 to-indigo-950 text-sky-200 text-xs font-semibold border border-sky-400/30 shadow-xs">
             <Footprints className="w-3.5 h-3.5 text-amber-400" />
-            <span>Kalkulator & Audit Jejak Digital Interaktif</span>
+            <span>Kalkulator &amp; Audit Jejak Digital Interaktif</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-neutral-950 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-blue-950 tracking-tight">
             Seberapa Rentan Jejak Digitalmu?
           </h2>
-          <p className="text-neutral-600 text-sm sm:text-base">
+          <p className="text-slate-600 text-sm sm:text-base">
             Centang kebiasaan online berikut yang pernah atau sering kamu lakukan untuk mengukur skor risiko paparan privasimu.
           </p>
         </div>
@@ -136,13 +136,13 @@ export const FootprintAudit: React.FC = () => {
           
           {/* Checklist on Left */}
           <div className="lg:col-span-7 space-y-3">
-            <div className="flex items-center justify-between pb-2 border-b border-neutral-200">
-              <span className="text-xs font-bold uppercase tracking-wider text-neutral-500">
+            <div className="flex items-center justify-between pb-2 border-b border-sky-200">
+              <span className="text-xs font-bold uppercase tracking-wider text-sky-800">
                 Pilih Kebiasaan yang Sering Kamu Lakukan:
               </span>
               <button
                 onClick={handleReset}
-                className="inline-flex items-center gap-1 text-xs text-neutral-500 hover:text-neutral-900 font-medium"
+                className="inline-flex items-center gap-1 text-xs text-sky-700 hover:text-blue-950 font-medium cursor-pointer"
               >
                 <RefreshCw className="w-3 h-3" />
                 <span>Reset Pilihan</span>
@@ -157,28 +157,28 @@ export const FootprintAudit: React.FC = () => {
                   onClick={() => handleToggle(item.id)}
                   className={`p-4 rounded-2xl border transition-all cursor-pointer select-none ${
                     isChecked
-                      ? 'border-neutral-900 bg-neutral-900 text-white shadow-sm'
-                      : 'border-neutral-200 bg-neutral-50 hover:bg-white hover:border-neutral-300 text-neutral-800'
+                      ? 'border-sky-400 bg-gradient-to-br from-blue-950 via-[#0c274e] to-[#07172f] text-white shadow-md'
+                      : 'border-sky-200/80 bg-white hover:bg-sky-50/50 hover:border-sky-300 text-slate-800'
                   }`}
                 >
                   <div className="flex items-start gap-3">
                     <div className="mt-0.5 shrink-0">
                       {isChecked ? (
-                        <CheckSquare2 className="w-5 h-5 text-amber-400" />
+                        <CheckSquare2 className="w-5 h-5 text-sky-300" />
                       ) : (
-                        <Square className="w-5 h-5 text-neutral-400" />
+                        <Square className="w-5 h-5 text-sky-400" />
                       )}
                     </div>
                     <div className="flex-1">
                       <p className="text-sm font-medium leading-snug">{item.question}</p>
                       {isChecked && (
-                        <div className="mt-3 p-3 rounded-xl bg-neutral-800 border border-neutral-700 text-xs space-y-1.5 animate-in fade-in-50">
+                        <div className="mt-3 p-3 rounded-xl bg-sky-950/80 border border-sky-800/60 text-xs space-y-1.5 animate-in fade-in-50">
                           <div className="flex items-center gap-1.5 text-amber-300 font-bold">
                             <AlertTriangle className="w-3.5 h-3.5" />
                             <span>Risiko: +{item.riskWeight}% Bahaya Paparan</span>
                           </div>
-                          <p className="text-neutral-300 text-xs leading-normal">{item.riskDescription}</p>
-                          <div className="text-emerald-300 font-semibold pt-1 border-t border-neutral-700/60">
+                          <p className="text-sky-100/90 text-xs leading-normal">{item.riskDescription}</p>
+                          <div className="text-emerald-300 font-semibold pt-1 border-t border-sky-800/60">
                             💡 Solusi: {item.fixTip}
                           </div>
                         </div>
@@ -192,25 +192,25 @@ export const FootprintAudit: React.FC = () => {
 
           {/* Real-time Risk Meter on Right */}
           <div className="lg:col-span-5 sticky top-24 space-y-5">
-            <div className="p-6 sm:p-8 rounded-3xl bg-neutral-50 border border-neutral-200 shadow-sm space-y-6">
+            <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-b from-[#eef7ff] to-white border border-sky-200 shadow-sm space-y-6">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-bold uppercase tracking-wider text-neutral-500">
+                <span className="text-xs font-bold uppercase tracking-wider text-sky-800">
                   Meter Risiko Jejak Digital
                 </span>
-                <span className="font-mono text-2xl font-black text-neutral-950">
+                <span className="font-mono text-2xl font-black text-blue-950">
                   {currentRiskScore}%
                 </span>
               </div>
 
               {/* Progress Bar */}
               <div className="space-y-1.5">
-                <div className="w-full h-4 rounded-full bg-neutral-200 overflow-hidden p-0.5">
+                <div className="w-full h-4 rounded-full bg-sky-100 overflow-hidden p-0.5 border border-sky-200">
                   <div
                     className={`h-full rounded-full transition-all duration-500 ${statusBadge.barColor}`}
                     style={{ width: `${Math.min(100, currentRiskScore)}%` }}
                   />
                 </div>
-                <div className="flex justify-between text-[10px] text-neutral-600 font-mono">
+                <div className="flex justify-between text-[10px] text-slate-500 font-mono">
                   <span>0% Aman</span>
                   <span>50% Waspada</span>
                   <span>100% Kritis</span>
@@ -233,21 +233,21 @@ export const FootprintAudit: React.FC = () => {
               </div>
 
               {/* 3 Golden Hygiene Rules */}
-              <div className="space-y-3 pt-2 border-t border-neutral-200">
-                <h4 className="text-xs font-bold uppercase tracking-wider text-neutral-700">
+              <div className="space-y-3 pt-2 border-t border-sky-200">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-blue-950">
                   3 Langkah Bersih Jejak Digital Hari Ini:
                 </h4>
-                <ul className="space-y-2 text-xs text-neutral-600">
+                <ul className="space-y-2 text-xs text-slate-600">
                   <li className="flex items-start gap-2">
-                    <span className="font-bold text-neutral-900">1.</span>
+                    <span className="font-bold text-blue-950">1.</span>
                     <span>Googling nama lengkapmu dalam tanda kutip (misal: "Nama Lengkap") untuk melihat apa yang bisa ditemukan publik.</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="font-bold text-neutral-900">2.</span>
+                    <span className="font-bold text-blue-950">2.</span>
                     <span>Hapus postingan status lawas yang mengandung emosi negatif atau data pribadi.</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="font-bold text-neutral-900">3.</span>
+                    <span className="font-bold text-blue-950">3.</span>
                     <span>Hapus akun di situs web jadul yang sudah tidak pernah kamu gunakan.</span>
                   </li>
                 </ul>

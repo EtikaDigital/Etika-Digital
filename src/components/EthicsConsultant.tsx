@@ -120,26 +120,26 @@ export const EthicsConsultant: React.FC = () => {
   };
 
   return (
-    <section id="konsultan" className="py-20 bg-neutral-100/60 border-b border-neutral-200">
+    <section id="konsultan" className="py-20 bg-gradient-to-b from-[#edf6fd] via-[#e2f0fc] to-white border-b border-sky-200/80">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto space-y-3 mb-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-900 text-white text-xs font-semibold">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-blue-950 via-blue-900 to-indigo-950 text-sky-200 text-xs font-semibold border border-sky-400/30 shadow-xs">
             <Bot className="w-3.5 h-3.5 text-amber-400" />
             <span>Asisten Cerdas Konsultasi Etika Digital</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-neutral-950 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-blue-950 tracking-tight">
             Tanya AI: Panduan Tindakan Etis
           </h2>
-          <p className="text-neutral-600 text-xs sm:text-sm">
+          <p className="text-slate-600 text-xs sm:text-sm">
             Punya dilema moral atau keraguan etis di media sosial dan internet? Tanyakan atau pilih kasus umum di bawah ini untuk memperoleh telaah etika dan hukum.
           </p>
         </div>
 
         {/* Preset Query Chips */}
         <div className="space-y-2 mb-6">
-          <span className="text-[11px] font-bold uppercase tracking-wider text-neutral-500 block">
+          <span className="text-[11px] font-bold uppercase tracking-wider text-sky-850 block text-sky-800">
             Studi Kasus Sering Ditanyakan:
           </span>
           <div className="flex flex-wrap gap-2">
@@ -147,7 +147,7 @@ export const EthicsConsultant: React.FC = () => {
               <button
                 key={idx}
                 onClick={() => analyzeDilemma(preset)}
-                className="text-left text-xs bg-white border border-neutral-200 hover:border-neutral-400 px-3 py-1.5 rounded-xl text-neutral-700 hover:text-neutral-950 transition-colors shadow-2xs"
+                className="text-left text-xs bg-white border border-sky-200 hover:border-sky-400 px-3 py-1.5 rounded-xl text-sky-900 hover:text-blue-950 transition-colors shadow-2xs cursor-pointer"
               >
                 💡 {preset}
               </button>
@@ -162,12 +162,12 @@ export const EthicsConsultant: React.FC = () => {
             value={inputText}
             onChange={(e) => setInputText(e.target.value)}
             placeholder="Tuliskan dilema etika digitalmu... (Contoh: Bolehkah repost karya orang tanpa izin?)"
-            className="w-full p-4 pr-14 rounded-2xl border border-neutral-300 bg-white text-sm text-neutral-900 placeholder:text-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:border-neutral-900"
+            className="w-full p-4 pr-14 rounded-2xl border border-sky-200 bg-white text-sm text-slate-900 placeholder:text-slate-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-600 focus:border-sky-600"
           />
           <button
             type="submit"
             disabled={isAnalyzing || !inputText.trim()}
-            className="absolute right-2.5 top-2.5 p-2.5 rounded-xl bg-neutral-900 text-white hover:bg-neutral-800 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+            className="absolute right-2.5 top-2.5 p-2.5 rounded-xl bg-blue-950 text-white hover:bg-blue-900 disabled:opacity-30 disabled:cursor-not-allowed transition-all cursor-pointer shadow-xs"
             title="Analisis Kasus"
           >
             <Send className="w-4 h-4" />
@@ -176,23 +176,23 @@ export const EthicsConsultant: React.FC = () => {
 
         {/* Loading Spinner */}
         {isAnalyzing && (
-          <div className="p-8 text-center bg-white rounded-2xl border border-neutral-200 space-y-3">
-            <RefreshCw className="w-6 h-6 animate-spin text-neutral-800 mx-auto" />
-            <p className="text-xs font-semibold text-neutral-600">
-              Menganalisis dilema berdasarkan UU ITE, UU PDP & Kaidah Netiket...
+          <div className="p-8 text-center bg-white rounded-2xl border border-sky-200 space-y-3 shadow-xs">
+            <RefreshCw className="w-6 h-6 animate-spin text-sky-700 mx-auto" />
+            <p className="text-xs font-semibold text-slate-600">
+              Menganalisis dilema berdasarkan UU ITE, UU PDP &amp; Kaidah Netiket...
             </p>
           </div>
         )}
 
         {/* Result Display */}
         {result && !isAnalyzing && (
-          <div className="p-6 sm:p-8 rounded-3xl bg-white border border-neutral-200 shadow-sm space-y-6 animate-in fade-in-50">
+          <div className="p-6 sm:p-8 rounded-3xl bg-white border border-sky-200 shadow-sm space-y-6 animate-in fade-in-50">
             
-            <div className="border-b border-neutral-100 pb-4">
-              <span className="text-[11px] font-bold uppercase tracking-wider text-neutral-500 block mb-1">
+            <div className="border-b border-sky-100 pb-4">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-sky-700 block mb-1">
                 Pertanyaan Kasus:
               </span>
-              <h3 className="text-base sm:text-lg font-bold text-neutral-900">
+              <h3 className="text-base sm:text-lg font-bold text-blue-950">
                 "{result.question}"
               </h3>
             </div>
@@ -214,31 +214,31 @@ export const EthicsConsultant: React.FC = () => {
 
             {/* Legal & Social Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-200 space-y-1.5 text-xs">
-                <div className="flex items-center gap-1.5 font-bold text-neutral-900">
-                  <Gavel className="w-4 h-4 text-neutral-700" />
+              <div className="p-4 rounded-2xl bg-sky-50/50 border border-sky-200 space-y-1.5 text-xs">
+                <div className="flex items-center gap-1.5 font-bold text-blue-950">
+                  <Gavel className="w-4 h-4 text-sky-700" />
                   <span>Tinjauan Hukum Indonesia:</span>
                 </div>
-                <p className="text-neutral-600 leading-relaxed">{result.legalConsiderations}</p>
+                <p className="text-slate-600 leading-relaxed">{result.legalConsiderations}</p>
               </div>
 
-              <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-200 space-y-1.5 text-xs">
-                <div className="flex items-center gap-1.5 font-bold text-neutral-900">
-                  <Lightbulb className="w-4 h-4 text-neutral-700" />
+              <div className="p-4 rounded-2xl bg-sky-50/50 border border-sky-200 space-y-1.5 text-xs">
+                <div className="flex items-center gap-1.5 font-bold text-blue-950">
+                  <Lightbulb className="w-4 h-4 text-sky-700" />
                   <span>Dampak Psikososial:</span>
                 </div>
-                <p className="text-neutral-600 leading-relaxed">{result.socialImpact}</p>
+                <p className="text-slate-600 leading-relaxed">{result.socialImpact}</p>
               </div>
             </div>
 
             {/* Step by Step Solution */}
             <div className="space-y-3">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-neutral-700">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-blue-950">
                 Langkah Solusi Bijak yang Direkomendasikan:
               </h4>
               <div className="space-y-2">
                 {result.actionSteps.map((step, idx) => (
-                  <div key={idx} className="flex items-start gap-2.5 p-3 rounded-xl bg-neutral-50 border border-neutral-200/80 text-xs text-neutral-800 font-medium">
+                  <div key={idx} className="flex items-start gap-2.5 p-3 rounded-xl bg-sky-50/60 border border-sky-200/80 text-xs text-slate-800 font-medium">
                     <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                     <span>{step}</span>
                   </div>
