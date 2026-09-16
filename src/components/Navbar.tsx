@@ -45,8 +45,12 @@ export const Navbar: React.FC<NavbarProps> = ({
           className="shrink-0 group flex items-center gap-2.5 transition-transform duration-200 hover:scale-[1.02]"
           aria-label="Kembali ke Beranda Etika Digital"
         >
-          <div className="p-1.5 rounded-xl bg-gradient-to-tr from-sky-500 via-blue-600 to-blue-700 text-white shadow-xs shadow-sky-500/25 group-hover:from-sky-400 group-hover:to-blue-600 transition-colors">
-            <Logo variant="icon" size="sm" symbolColor="#ffffff" />
+          <div className="p-1 rounded-xl bg-white/90 border border-sky-200/90 shadow-xs shadow-sky-900/5 group-hover:border-sky-400 transition-all flex items-center justify-center overflow-hidden">
+            <img
+              src="/logo-baru.png"
+              alt="Logo Etika Digital"
+              className="h-8 w-auto max-w-[110px] object-contain shrink-0 rounded-lg"
+            />
           </div>
           <div className="flex flex-col">
             <span className="font-extrabold text-lg tracking-[0.14em] text-blue-950 leading-none">

@@ -24,8 +24,12 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPledge }) => {
           {/* Brand Info */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="p-2 rounded-xl bg-gradient-to-br from-sky-400 to-blue-600 text-white inline-block shadow-sm">
-                <Logo variant="icon" size="sm" symbolColor="#ffffff" />
+              <div className="p-1 rounded-xl bg-white/10 border border-sky-400/40 text-white inline-flex items-center justify-center shadow-sm overflow-hidden">
+                <img
+                  src="/logo-baru.png"
+                  alt="Logo Etika Digital"
+                  className="h-9 w-auto max-w-[120px] object-contain shrink-0 rounded-lg"
+                />
               </div>
               <div className="flex flex-col">
                 <span className="font-extrabold text-lg tracking-[0.14em] text-white leading-none">

@@ -168,6 +168,15 @@ export const LogoKitModal: React.FC<LogoKitModalProps> = ({ isOpen, onClose }) =
                 <Download className="w-3.5 h-3.5" />
                 <span>Unduh File .SVG</span>
               </button>
+              <a
+                href="/logo-baru.png"
+                download="logo-baru.png"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white text-xs font-bold shadow-xs cursor-pointer"
+                title="Unduh file gambar logo-baru.png resolusi tinggi"
+              >
+                <Download className="w-3.5 h-3.5" />
+                <span>Unduh logo-baru.png</span>
+              </a>
             </div>
           </div>
 

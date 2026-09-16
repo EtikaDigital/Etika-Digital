@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 interface LogoProps {
   className?: string;
@@ -15,18 +15,20 @@ export const Logo: React.FC<LogoProps> = ({
   textColor = 'text-neutral-900',
   symbolColor = 'currentColor',
 }) => {
-  // Size scales
+  const [hasImgError, setHasImgError] = useState(false);
+
+  // Size scales for typography and image sizing
   const sizeMap = {
-    sm: { symbolH: 26, text: 'text-sm tracking-wider', gap: 'gap-2' },
-    md: { symbolH: 34, text: 'text-lg tracking-widest', gap: 'gap-2.5' },
-    lg: { symbolH: 48, text: 'text-2xl tracking-[0.2em]', gap: 'gap-3.5' },
-    xl: { symbolH: 72, text: 'text-4xl tracking-[0.25em]', gap: 'gap-4' },
+    sm: { imgClass: 'h-8 w-auto max-w-[120px]', symbolH: 26, text: 'text-sm tracking-wider', gap: 'gap-2' },
+    md: { imgClass: 'h-10 w-auto max-w-[150px]', symbolH: 34, text: 'text-lg tracking-widest', gap: 'gap-2.5' },
+    lg: { imgClass: 'h-14 w-auto max-w-[200px]', symbolH: 48, text: 'text-2xl tracking-[0.2em]', gap: 'gap-3.5' },
+    xl: { imgClass: 'h-20 w-auto max-w-[280px]', symbolH: 72, text: 'text-4xl tracking-[0.25em]', gap: 'gap-4' },
   };
 
   const currentSize = sizeMap[size];
 
-  // SVG Symbol geometry matching IMG_7556.png
-  const Symbol = () => (
+  // SVG Fallback symbol if image fails to load
+  const FallbackSymbol = () => (
     <svg
       viewBox="0 0 200 130"
       height={currentSize.symbolH}
@@ -35,8 +37,6 @@ export const Logo: React.FC<LogoProps> = ({
       xmlns="http://www.w3.org/2000/svg"
       aria-label="Logo ED Etika Digital"
     >
-      {/* Letter E */}
-      {/* Outer stadium arc on left, flat right cut */}
       <path
         d="
           M 90 0
@@ -50,7 +50,6 @@ export const Logo: React.FC<LogoProps> = ({
           Z
         "
       />
-      {/* Letter E middle bar: rounded left, flat right */}
       <path
         d="
           M 90 51
@@ -60,9 +59,6 @@ export const Logo: React.FC<LogoProps> = ({
           Z
         "
       />
-
-      {/* Letter D */}
-      {/* Straight vertical bar on left, outer arc on right, inner counter cutout */}
       <path
         fillRule="evenodd"
         d="
@@ -81,10 +77,26 @@ export const Logo: React.FC<LogoProps> = ({
     </svg>
   );
 
+  const LogoImage = () => {
+    if (hasImgError) {
+      return <FallbackSymbol />;
+    }
+
+    return (
+      <img
+        src="/logo-baru.png"
+        alt="Logo Etika Digital"
+        onError={() => setHasImgError(true)}
+        className={`${currentSize.imgClass} object-contain shrink-0 transition-transform duration-200`}
+        loading="eager"
+      />
+    );
+  };
+
   if (variant === 'icon') {
     return (
       <div className={`inline-flex items-center justify-center ${className}`}>
-        <Symbol />
+        <LogoImage />
       </div>
     );
   }
@@ -92,7 +104,7 @@ export const Logo: React.FC<LogoProps> = ({
   if (variant === 'stacked') {
     return (
       <div className={`flex flex-col items-center justify-center ${currentSize.gap} ${className}`}>
-        <Symbol />
+        <LogoImage />
         <div className={`font-sans uppercase select-none leading-none ${currentSize.text} ${textColor}`}>
           <span className="font-extrabold tracking-[0.18em]">ETIKA</span>
           <span className="font-light tracking-[0.22em]">DIGITAL</span>
@@ -103,7 +115,7 @@ export const Logo: React.FC<LogoProps> = ({
 
   return (
     <div className={`inline-flex items-center ${currentSize.gap} ${className}`}>
-      <Symbol />
+      <LogoImage />
       <div className={`font-sans uppercase select-none leading-none ${currentSize.text} ${textColor}`}>
         <span className="font-extrabold tracking-[0.12em]">ETIKA</span>
         <span className="font-light tracking-[0.16em]">DIGITAL</span>
